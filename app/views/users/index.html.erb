@@ -2,13 +2,64 @@
 
 <h3>Looking for a Vet?</h3>
 <form>
-  Search by Zip:
-  <input type="search" name="zipsearch">
+  Search by City, State, or Zip:
+  <input type="search" name="termsearch">
 </form>
+<input id="pac-input" class="controls" type="text"
+       placeholder="Enter a location">
+<div id="map">
+      <script>
+        var map;
+        var infowindow;
+        function initMap() {
+          var seattle = new google.maps.LatLng(47.6097, -122.3331);
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: seattle,
+            zoom: 13
+          });
 
-<iframe
+          var request = {
+            location: seattle,
+            radius: 5000,
+            keyword: "(veterinary) OR (veterinarian)"
+          };
+
+          infowindow = new google.maps.InfoWindow();
+
+          // Create the PlaceService and send the request.
+          // Handle the callback with an anonymous function.
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, function(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+              for (var i = 0; i < results.length; i++) {
+                var place = results[i];
+                // If the request succeeds, draw the place location on
+                // the map as a marker, and register an event to handle a
+                // click on the marker.
+                createMarker(place);
+              }
+              console.log(results.length)
+            }
+          });
+          function createMarker(place) {
+            var marker = new google.maps.Marker({
+              map: map,
+              position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent(place.name);
+              infowindow.open(map, this);
+            });
+          }
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=<%= @key %>&callback=initMap&libraries=places"
+      async defer></script>
+<!-- <iframe
   width="600"
   height="450"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=<%= @key %>&q=veterinar, near+<%= @zip %>" allowfullscreen>
-</iframe>
+  src="https://www.google.com/maps/embed/v1/search?key=<%= @key %>&q=veterinar, near+<%= @term %>" allowfullscreen>
+</iframe> -->
+
+</div>
