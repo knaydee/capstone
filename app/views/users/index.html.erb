@@ -5,7 +5,16 @@
   Search by City, State, or Zip:
   <input type="search" name="termsearch">
 </form>
-<input id="pac-input" class="controls" type="text"
+
+<iframe>
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=<%= @key %>
+    &q=veterinar+near+<%= @term %>" allowfullscreen>
+</iframe>
+
+<!-- <input id="pac-input" class="controls" type="text"
        placeholder="Enter a location">
 <div id="map">
       <script>
@@ -20,7 +29,7 @@
           var request = {
             location: seattle,
             radius: 5000,
-            keyword: "(veterinary) OR (veterinarian)"
+            query: "veterinarian"
           };
 
           var infowindow = new google.maps.InfoWindow();
@@ -28,13 +37,14 @@
           // Create the PlaceService and send the request.
           // Handle the callback with an anonymous function.
           var service = new google.maps.places.PlacesService(map);
-          service.nearbySearch(request, function(results, status) {
+          service.textSearch(request, function(results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
               for (var i = 0; i < results.length; i++) {
                 var place = results[i];
+                console.log(results.length);
+                console.log(place.place_id);
                 service.getDetails({placeId: place.place_id}, function(result, status) {
                   if (status == google.maps.places.PlacesServiceStatus.OK) {
-                    console.log(result);
                     createMarker(result);
                   }
                 });
@@ -57,7 +67,8 @@
           }
         }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=<%= @key %>&callback=initMap&libraries=places"
-      async defer></script>
 
-</div>
+</div> -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=<%= @key %>">
+</script>
