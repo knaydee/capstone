@@ -1,0 +1,18 @@
+<div class='navbar navbar-default'>
+  <%= link_to 'Home', root_path, class:"btn btn-nav"%>
+  <% if @current_user %>
+    <%= link_to "Logout", "/logout", class: "btn btn-nav" %>
+  <% else %>
+    <%= link_to "Sign in with Google+", "/auth/google", class:"btn btn-nav" %>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="page-header">
+      <% if @current_user %>
+        <h1 id="timeline">Hello, <%= "#{@current_user.username}" %></h1>
+      <% else %>
+        <h1 id="timeline">Welcome to Pet Stop</h1>
+        <h6>This page will list Vets</h6>
+      <% end %>
+  </div>

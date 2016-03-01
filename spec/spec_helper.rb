@@ -59,7 +59,8 @@ RSpec.configure do |config|
 
    OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({:provider => 'google', :uid => '123545', info: {email: "a@b.com", username: "Ada"}})
 end
-   config.include FactoryGirl::Syntax::Methods
+
+config.include FactoryGirl::Syntax::Methods
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.

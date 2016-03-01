@@ -1,24 +1,15 @@
 require 'rails_helper'
 require 'pry'
+require 'spec_helper'
 
 RSpec.describe SessionsController, type: :controller do
 
   context "user is logged out" do
-    describe "GET #new" do
-      it "responds successfully with an HTTP 200 status code" do
-        get :new
-        expect(response).to be_success
-        expect(response).to have_http_status(200)
-      end
-      it "renders the new template" do
-        get :new
-        expect(response).to render_template :new
-      end
-    end
+
     describe "GET #create" do
+      before { request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] }
         context "when using google authorization" do
           context "is successful" do
-            before { request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] }
 
             it "redirects to home page" do
               get :create, provider: :google
