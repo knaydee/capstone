@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "omniauth"
 gem "omniauth-github"
+gem "omniauth-google-oauth2"
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
