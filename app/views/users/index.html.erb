@@ -2,6 +2,7 @@
 
 <h3>Looking for a Vet?</h3>
 <form>
+<<<<<<< HEAD
   Search by Zip:
   <input type="search" name="termsearch">
 </form>
@@ -13,4 +14,75 @@
   height="450"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/search?key=<%= @key %>&q=veterinar, near+<%= @term %>" allowfullscreen>
+=======
+  Search by City, State, or Zip:
+  <input type="search" name="termsearch">
+</form>
+
+<iframe>
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=<%= @key %>
+    &q=veterinar+near+<%= @term %>" allowfullscreen>
+>>>>>>> fc3110413676b90c2188105c2766867ff25a0c0c
 </iframe>
+
+<!-- <input id="pac-input" class="controls" type="text"
+       placeholder="Enter a location">
+<div id="map">
+      <script>
+        var map;
+        function initMap() {
+          var seattle = new google.maps.LatLng(47.6097, -122.3331);
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: seattle,
+            zoom: 13
+          });
+
+          var request = {
+            location: seattle,
+            radius: 5000,
+            query: "veterinarian"
+          };
+
+          var infowindow = new google.maps.InfoWindow();
+
+          // Create the PlaceService and send the request.
+          // Handle the callback with an anonymous function.
+          var service = new google.maps.places.PlacesService(map);
+          service.textSearch(request, function(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+              for (var i = 0; i < results.length; i++) {
+                var place = results[i];
+                console.log(results.length);
+                console.log(place.place_id);
+                service.getDetails({placeId: place.place_id}, function(result, status) {
+                  if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    createMarker(result);
+                  }
+                });
+                // If the request succeeds, draw the place location on
+                // the map as a marker, and register an event to handle a
+                // click on the marker.
+                // createMarker(place);
+              }
+            }
+          });
+          function createMarker(place) {
+            var marker = new google.maps.Marker({
+              map: map,
+              position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent(place.name + '<br>' + place.formatted_address);
+              infowindow.open(map, this);
+            });
+          }
+        }
+      </script>
+
+</div> -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=<%= @key %>">
+</script>
