@@ -44,7 +44,22 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-config.include FactoryGirl::Syntax::Methods
+  config.before(:suite) do
+   # Once you have enabled test mode, all requests
+   # to OmniAuth will be short circuited
+   # to use the mock authentication hash.
+   # A request to /auth/provider will redirect
+   # immediately to /auth/provider/callback.
+
+   OmniAuth.config.test_mode = true
+
+   # The mock_auth configuration allows you to
+   # set per-provider (or default) authentication
+   # hashes to return during testing.
+
+   OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({:provider => 'google', :uid => '123545', info: {email: "a@b.com", username: "Ada"}})
+end
+   config.include FactoryGirl::Syntax::Methods
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
