@@ -9,7 +9,7 @@ FactoryGirl.define do
   factory :user do
     username "Fiona"
     uid "1234567"
-    provider "Google"
+    provider "google"
     email "a@b.com"
   end
 

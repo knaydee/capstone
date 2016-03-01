@@ -3,13 +3,11 @@ require 'pry'
 require 'spec_helper'
 
 RSpec.describe SessionsController, type: :controller do
-
-  context "user is logged out" do
-
     describe "GET #create" do
-      before { request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] }
+
         context "when using google authorization" do
           context "is successful" do
+            before { request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] }
 
             it "redirects to home page" do
               get :create, provider: :google
@@ -17,7 +15,7 @@ RSpec.describe SessionsController, type: :controller do
             end
 
             it "creates a user" do
-              expect { get :create, provider: :google }.to change(User, :count).by(1)
+              expect { get :create, provider: :google}.to change(User, :count).by(1)
             end
 
             it "assigns the @user var" do
@@ -31,6 +29,7 @@ RSpec.describe SessionsController, type: :controller do
             end
 
           end
+        end
 
           context "when the user has already signed up" do
             before { request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] }
@@ -67,8 +66,6 @@ RSpec.describe SessionsController, type: :controller do
               expect(flash[:notice]).to include "Incorrect email or password"
             end
           end
-        end
-      end
 
       describe "DELETE #destroy" do
         it "is not successful and redirects" do
@@ -80,37 +77,5 @@ RSpec.describe SessionsController, type: :controller do
           expect(subject).to redirect_to root_path
         end
       end
-
-    end
-
-    context "user is logged in" do
-      before :each do
-        @user = create(:google_user)
-        session[:user_id] = @user.id
-      end
-      describe "GET #new" do
-        it "is not successful and redirects" do
-          get :new
-          expect(response).to have_http_status(302)
-        end
-        it "redirects to the root path" do
-          get :new
-          expect(subject).to redirect_to root_path
-        end
-      end
-      describe "POST #create" do
-        before { request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] }
-        it "redirects to root path" do
-          get :create, provider: :google
-          expect(subject).to redirect_to root_path
-        end
-      end
-      describe "DELETE #destroy" do
-        it "redirects to index page" do
-          delete :destroy
-          expect(response).to redirect_to root_path
-        end
-      end
-
-    end
   end
+end
