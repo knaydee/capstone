@@ -1,34 +1,21 @@
 <h1>Welcome to Pet Stop</h1>
 
 <h3>Looking for a Vet?</h3>
-<form>
-<<<<<<< HEAD
-  Search by Zip:
-  <input type="search" name="termsearch">
-</form>
-
 <h4><%= @data %></h4>
-
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=<%= @key %>&q=veterinar, near+<%= @term %>" allowfullscreen>
-=======
+<form>
   Search by City, State, or Zip:
   <input type="search" name="termsearch">
 </form>
 
-<iframe>
+<!-- <iframe>
   width="600"
   height="450"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/search?key=<%= @key %>
     &q=veterinar+near+<%= @term %>" allowfullscreen>
->>>>>>> fc3110413676b90c2188105c2766867ff25a0c0c
-</iframe>
+</iframe> -->
 
-<!-- <input id="pac-input" class="controls" type="text"
+<input id="pac-input" class="controls" type="text"
        placeholder="Enter a location">
 <div id="map">
       <script>
@@ -81,8 +68,7 @@
           }
         }
       </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=<%= @key %>&callback=initMap&libraries=places"
+      async defer></script>
 
-</div> -->
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=<%= @key %>">
-</script>
+</div>
