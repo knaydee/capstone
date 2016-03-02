@@ -75,38 +75,38 @@ end
 services = [
   {
     name: "Bordatella (Oral)",
-    type: "Vaccination",
+    service_type: "Vaccination",
     avg_cost: "$20-$30"
   },
   {
     name: "Rabies",
-    type: "Vaccination",
+    service_type: "Vaccination",
     avg_cost: "$10-$15"
   },
   {
     name: "Office Call",
-    type: "General",
+    service_type: "General",
     avg_cost: "$45-$55"
   },
 
   {
     name: "Heartworm Test",
-    type: "Blood Test",
+    service_type: "Blood Test",
     avg_cost: "$45-$50"
   },
   {
     name: "Geriatric Screening",
-    type: "Exam",
+    service_type: "Exam",
     avg_cost: "$85-$110"
   },
   {
     name: "Allergy Testing",
-    type: "Blood Test",
+    service_type: "Blood Test",
     avg_cost: "$200-$300"
   },
   {
     name: "Allergy Testing",
-    type: "Skin Test",
+    service_type: "Skin Test",
     avg_cost: "$195-$250"
   },
 ]
@@ -116,7 +116,7 @@ services.each do |s|
   service.save(validate: false)
 end
 
-services_vets = [
+service_vets = [
   {
     vet_id: 1,
     service_id: 1,
@@ -159,12 +159,12 @@ services_vets = [
   },
 ]
 
-services_vets.each do |sv|
-  services_vets = Service.new(sv)
-  services_vets.save(validate: false)
+service_vets.each do |sv|
+  service_vet = ServiceVet.new(sv)
+  service_vet.save(validate: false)
 end
 
-users_vets = [
+user_vets = [
   {
     user_id: 1,
     vet_id: 1
@@ -187,7 +187,7 @@ users_vets = [
   },
 ]
 
-users_vets.each do |uv|
-  users_vets = Service.new(uv)
-  users_vets.save(validate: false)
+user_vets.each do |uv|
+  user_vet = UserVet.new(uv)
+  user_vet.save(validate: false)
 end
