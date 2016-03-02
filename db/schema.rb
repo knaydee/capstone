@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301193335) do
+ActiveRecord::Schema.define(version: 20160302181348) do
+
+  create_table "service_vets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.string   "price"
+    t.string   "avg_cost"
+    t.integer  "vet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services_vets", id: false, force: :cascade do |t|
+    t.integer "vet_id",     null: false
+    t.integer "service_id", null: false
+  end
+
+  create_table "user_vets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -21,6 +46,12 @@ ActiveRecord::Schema.define(version: 20160301193335) do
     t.string   "uid"
     t.string   "provider"
     t.string   "image"
+    t.integer  "vet_id"
+  end
+
+  create_table "users_vets", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "vet_id",  null: false
   end
 
   create_table "vets", force: :cascade do |t|
@@ -33,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160301193335) do
     t.datetime "updated_at", null: false
     t.string   "phone"
     t.string   "fax"
+    t.integer  "service_id"
   end
 
 end

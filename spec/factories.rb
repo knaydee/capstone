@@ -1,4 +1,16 @@
 FactoryGirl.define do
+  factory :service_vet do
+    
+  end
+  factory :user_vet do
+    
+  end
+  factory :service do
+    name "MyString"
+    type ""
+    price "MyString"
+    avg_cost "MyString"
+  end
   factory :vet do
     name "Fiona's Favorite Vet"
     url "www.ffv.com"
