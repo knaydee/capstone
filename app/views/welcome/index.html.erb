@@ -13,6 +13,12 @@
         <h1 id="timeline">Hello, <%= "#{@current_user.username}" %></h1>
       <% else %>
         <h1 id="timeline">Welcome to Pet Stop</h1>
-        <h6>This page will list Vets</h6>
+          <ul>
+            <% @vets.each do |vet| %>
+            <li>
+              <%= vet.name %>
+            </li>
+            <% end %>
+          </ul>
       <% end %>
   </div>
