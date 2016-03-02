@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
   end
-  
+
   def create
     auth_hash = request.env['omniauth.auth']
     if auth_hash["uid"].nil?

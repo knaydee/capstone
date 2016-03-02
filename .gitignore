@@ -17,6 +17,8 @@
 /tmp
 /.env
 
+node_modules
+
 # From https://github.com/github/gitignore/blob/master/Rails.gitignore
 *.rbc
 capybara-*.html
