@@ -72,10 +72,122 @@ vets.each do |v|
   vet.save(validate: false)
 end
 
-# services = [
-#   {
-#     name: "",
-#     type: "",
-#     avg_cost: ""
-#   }
-# ]
+services = [
+  {
+    name: "Bordatella (Oral)",
+    type: "Vaccination",
+    avg_cost: "$20-$30"
+  },
+  {
+    name: "Rabies",
+    type: "Vaccination",
+    avg_cost: "$10-$15"
+  },
+  {
+    name: "Office Call",
+    type: "General",
+    avg_cost: "$45-$55"
+  },
+
+  {
+    name: "Heartworm Test",
+    type: "Blood Test",
+    avg_cost: "$45-$50"
+  },
+  {
+    name: "Geriatric Screening",
+    type: "Exam",
+    avg_cost: "$85-$110"
+  },
+  {
+    name: "Allergy Testing",
+    type: "Blood Test",
+    avg_cost: "$200-$300"
+  },
+  {
+    name: "Allergy Testing",
+    type: "Skin Test",
+    avg_cost: "$195-$250"
+  },
+]
+
+services.each do |s|
+  service = Service.new(s)
+  service.save(validate: false)
+end
+
+services_vets = [
+  {
+    vet_id: 1,
+    service_id: 1,
+    price: "$21.50"
+  },
+  {
+    vet_id: 1,
+    service_id: 2,
+    price: "$16"
+  },
+  {
+    vet_id: 2,
+    service_id: 2,
+    price: "$10"
+  },
+  {
+    vet_id: 3,
+    service_id: 1,
+    price: "$25"
+  },
+  {
+    vet_id: 3,
+    service_id: 2,
+    price: "$40"
+  },
+  {
+    vet_id: 4,
+    service_id: 3,
+    price: "$60"
+  },
+  {
+    vet_id: 3,
+    service_id: 3,
+    price: "$45"
+  },
+  {
+    vet_id: 1,
+    service_id: 3,
+    price: "$90"
+  },
+]
+
+services_vets.each do |sv|
+  services_vets = Service.new(sv)
+  services_vets.save(validate: false)
+end
+
+users_vets = [
+  {
+    user_id: 1,
+    vet_id: 1
+  },
+  {
+    user_id: 2,
+    vet_id: 1
+  },
+  {
+    user_id: 3,
+    vet_id: 1
+  },
+  {
+    user_id: 2,
+    vet_id: 2
+  },
+  {
+    user_id: 1,
+    vet_id: 3
+  },
+]
+
+users_vets.each do |uv|
+  users_vets = Service.new(uv)
+  users_vets.save(validate: false)
+end
