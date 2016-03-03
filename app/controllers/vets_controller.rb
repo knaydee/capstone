@@ -1,6 +1,5 @@
 class VetsController < ApplicationController
-  before_action :only_owner, only: [:edit, :update, :show, :destroy]
-  before_action :require_login, only: [:index, :new, :create]
+  before_action :require_login, except: [:index]
 
   # def index
   #   @vets = @current_user.vets
