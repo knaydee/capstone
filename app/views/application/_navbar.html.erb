@@ -1,0 +1,8 @@
+<div class='navbar navbar-default'>
+  <%= link_to 'Home', root_path, class:"btn btn-nav"%>
+  <% if @current_user %>
+    <%= link_to "Logout", "/logout", class: "btn btn-nav" %>
+  <% else %>
+    <%= link_to "Sign in with Google+", "/auth/google", class:"btn btn-nav" %>
+  <% end %>
+</div>
