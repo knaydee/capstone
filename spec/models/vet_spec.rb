@@ -6,7 +6,7 @@ RSpec.describe Vet, type: :model do
       it "is valid" do
         expect(create(:vet)).to be_valid
       end
-      it "is invalid without a username" do
+      it "is invalid without a name" do
         expect(build(:vet, name: nil)).to be_invalid
       end
     end
