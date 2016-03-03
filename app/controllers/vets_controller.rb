@@ -2,10 +2,19 @@ class VetsController < ApplicationController
   before_action :only_owner, only: [:edit, :update, :show, :destroy]
   before_action :require_login, only: [:index, :new, :create]
 
+  # def index
+  #   @vets = @current_user.vets
+  #   @title = "My Veterinarians"
+  # end
+
   def index
-    @vets = @current_user.vets
-    @title = "My Veterinarians"
+    if params[:search]
+      @vets = Vet.search(params[:search]).order("name DESC")
+    else
+      @vets = Vet.all.order('name DESC')
+    end
   end
+
 
   def show
     id = params[:id]
