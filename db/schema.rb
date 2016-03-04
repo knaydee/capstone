@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302232847) do
+ActiveRecord::Schema.define(version: 20160304050647) do
 
   create_table "service_vets", id: false, force: :cascade do |t|
     t.integer "vet_id",     null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160302232847) do
     t.datetime "updated_at", null: false
     t.string   "phone"
     t.string   "fax"
+    t.boolean  "favorite"
   end
 
 end
