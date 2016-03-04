@@ -3,7 +3,7 @@
   <ul>
     <li>
       <p><%= vet.name %></p>
-      <p><%= link_to "#{vet.url}", vet.url %></p>
+      <p><%= link_to "#{vet.url}", vet.url, :target => '_blank' %></p>
       <p><%= vet.address %></p>
       <p><%= mail_to "#{vet.email}" %></p>
       <p><%= vet.phone %></p>
