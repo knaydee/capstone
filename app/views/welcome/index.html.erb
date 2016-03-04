@@ -4,6 +4,7 @@
         <h1 id="timeline">Hello, <%= "#{@current_user.username}" %></h1>
       <% else %>
         <h1 id="timeline">Welcome to Pet Stop</h1>
+      <% end %>
           <ul>
             <% @vets.each do |vet| %>
             <li>
@@ -11,10 +12,11 @@
             </li>
             <% end %>
           </ul>
-      <% end %>
   </div>
 
   <%= form_tag(vets_path, :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search Vets" %>
   <%= submit_tag "Search" %>
   <% end %>
+
+  

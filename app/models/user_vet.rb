@@ -1,3 +1,4 @@
 class UserVet < ActiveRecord::Base
-  has_many :vets, through: :user_vet
+  belongs_to :user
+  belongs_to :vet 
 end

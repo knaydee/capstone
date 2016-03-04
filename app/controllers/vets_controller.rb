@@ -23,16 +23,18 @@ class VetsController < ApplicationController
   end
 
   def new
-    @vet = Vet.new()
+    @vet = Vet.new
     @action = "create"
     @title = "Add a New Veterinarian"
   end
 
   def create
     vet = Vet.create(vet_params[:vet])
-    vet.user_id = session[:user_id]
-    vet.save
-    redirect_to user_path(@current_user)
+    user_vet = UserVet.new
+    user_vet.user_id = session[:user_id]
+    user_vet.vet_id = vet.id
+    user_vet.save
+    redirect_to root_path
   end
 
   def edit
@@ -57,7 +59,7 @@ class VetsController < ApplicationController
   private
 
   def vet_params
-    params.permit(vet:[:name, :url, :email, :address, :phone, :fax])
+    params.permit(vet:[:name, :url, :email, :address, :phone, :fax, :favorite])
   end
 
   def only_owner

@@ -3,3 +3,7 @@
 <% else %>
   <p>There are no vets containing the term(s) <%= params[:search] %>.</p>
 <% end %>
+
+<% if @current_user %>
+  <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
+<% end %>
