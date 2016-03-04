@@ -167,15 +167,18 @@ end
 user_vets = [
   {
     user_id: 1,
-    vet_id: 1
+    vet_id: 1,
+    favorite: true
   },
   {
     user_id: 2,
-    vet_id: 1
+    vet_id: 1,
+    favorite: false
   },
   {
     user_id: 3,
-    vet_id: 1
+    vet_id: 1,
+    favorite: true
   },
   {
     user_id: 2,

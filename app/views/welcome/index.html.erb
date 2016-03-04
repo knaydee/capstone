@@ -6,24 +6,17 @@
   <div class="page-header">
       <% if @current_user %>
         <h1 id="timeline">Hello, <%= "#{@current_user.username}" %></h1>
-        <ul>
-          <% @user_vets.each do |uv| %>
-          <% if uv.user_id == @current_user.id %>
-            <li>
-              <%= link_to "#{uv.vet.name}", edit_vet_path(uv.vet.id) %>
-            </li>
-            <% end %>
-          <% end %>
-        </ul>
-      <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
       <% else %>
         <h1 id="timeline">Welcome to Pet Stop</h1>
-        <ul>
-          <% @vets.each do |vet| %>
-          <li>
-            <%= link_to "#{vet.name}", vet_path(vet.id) %>
-          </li>
-          <% end %>
-        </ul>
       <% end %>
+      <ul>
+        <% @vets.each do |vet| %>
+        <li>
+          <%= link_to "#{vet.name}", vet_path(vet.id) %>
+          <% if @current_user %>
+            <%= vet.favorite %>
+          <% end %>
+        </li>
+        <% end %>
+        <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
   </div>
