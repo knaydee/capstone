@@ -1,5 +1,5 @@
 class VetsController < ApplicationController
-  before_action :require_login, except: [:index]
+  before_action :require_login, except: [:index, :show]
 
   def index
     if params[:search]
@@ -12,7 +12,6 @@ class VetsController < ApplicationController
   def show
     id = params[:id]
     @vet = Vet.find(id)
-    @name = @vet.name
   end
 
   def new

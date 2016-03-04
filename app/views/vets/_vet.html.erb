@@ -1,5 +1,14 @@
 <% if params[:search] %>
   <% @vets.each do |vet| %>
-    <%= vet.name %>
+  <ul>
+    <li>
+      <p><%= vet.name %></p>
+      <p><%= vet.url %></p>
+      <p><%= vet.address %></p>
+      <p><%= vet.email %></p>
+      <p><%= vet.phone %></p>
+      <p><%= vet.fax %></p>
+    </li>
+  </ul>
   <% end %>
 <% end %>

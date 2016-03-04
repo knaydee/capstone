@@ -21,7 +21,7 @@
         <ul>
           <% @vets.each do |vet| %>
           <li>
-            <%= vet.name %>
+            <%= link_to "#{vet.name}", vet_path(vet.id) %>
           </li>
           <% end %>
         </ul>
