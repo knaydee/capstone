@@ -1,3 +1,7 @@
+<%= form_tag(vets_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Vets" %>
+<%= submit_tag "Search" %>
+<% end %>
 <div class="container">
   <div class="page-header">
       <% if @current_user %>
@@ -6,11 +10,12 @@
           <% @user_vets.each do |uv| %>
           <% if uv.user_id == @current_user.id %>
             <li>
-              <%= uv.vet.name %>
+              <%= link_to "#{uv.vet.name}", edit_vet_path(uv.vet.id) %>
             </li>
             <% end %>
           <% end %>
         </ul>
+      <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
       <% else %>
         <h1 id="timeline">Welcome to Pet Stop</h1>
         <ul>
@@ -22,8 +27,3 @@
         </ul>
       <% end %>
   </div>
-
-  <%= form_tag(vets_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Vets" %>
-  <%= submit_tag "Search" %>
-  <% end %>

@@ -1,11 +1,6 @@
 class VetsController < ApplicationController
   before_action :require_login, except: [:index]
 
-  # def index
-  #   @vets = @current_user.vets
-  #   @title = "My Veterinarians"
-  # end
-
   def index
     if params[:search]
       @vets = Vet.search(params[:search]).order("name DESC")
@@ -14,18 +9,15 @@ class VetsController < ApplicationController
     end
   end
 
-
   def show
     id = params[:id]
     @vet = Vet.find(id)
-    @title = "#{@vet.name}'s Info"
     @name = @vet.name
   end
 
   def new
     @vet = Vet.new
     @action = "create"
-    @title = "Add a New Veterinarian"
   end
 
   def create
@@ -42,13 +34,12 @@ class VetsController < ApplicationController
     id = params[:id]
     @vet = Vet.find(id)
     @action = "update"
-    @title = "Edit Veterinarian Info"
   end
 
   def update
     id = params[:id]
     Vet.update(id, vet_params[:vet])
-    redirect_to vet_path(id)
+    redirect_to root_path
   end
 
   def destroy
