@@ -12,6 +12,11 @@ class VetsController < ApplicationController
   def show
     id = params[:id]
     @vet = Vet.find(id)
+    @service_vets = ServiceVet.where("vet_id = '#{id}'")
+    @services = @service_vets.map do |sv|
+      sv_id = sv.service_id
+      Service.find(sv_id)
+    end
   end
 
   def new
