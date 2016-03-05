@@ -1,4 +1,11 @@
 FactoryGirl.define do
+  factory :pet do
+    name "MyString"
+    age 1
+    breed "MyString"
+    weight 1
+    size "MyString"
+  end
 
   factory :service_vet do
     service_id 1
@@ -8,7 +15,8 @@ FactoryGirl.define do
   end
 
   factory :user_vet do
-
+    user_id 1
+    vet_id 1
   end
 
   factory :service do
@@ -18,6 +26,7 @@ FactoryGirl.define do
   end
 
   factory :vet do
+    id 1
     name "Fiona's Favorite Vet"
     url "www.ffv.com"
     address "1234 W South St Seattle, WA 98103"
