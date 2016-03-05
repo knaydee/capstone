@@ -6,10 +6,9 @@ FactoryGirl.define do
 
   end
   factory :service do
-    name "MyString"
-    type ""
-    price "MyString"
-    avg_cost "MyString"
+    name "Rabies Vaccination"
+    service_type "Vaccinations"
+    avg_cost "$10-$15"
   end
   factory :vet do
     name "Fiona's Favorite Vet"
