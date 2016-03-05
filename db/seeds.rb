@@ -120,32 +120,32 @@ service_vets = [
   {
     vet_id: 1,
     service_id: 1,
-    price: "$21.50"
+    price: 2150
   },
   {
     vet_id: 1,
     service_id: 2,
-    price: "$16"
+    price: 1600
   },
   {
     vet_id: 2,
     service_id: 2,
-    price: "$10"
+    price: 1000
   },
   {
     vet_id: 3,
     service_id: 1,
-    price: "$25"
+    price: 2500
   },
   {
     vet_id: 3,
     service_id: 2,
-    price: "$40"
+    price: 4000
   },
   {
     vet_id: 4,
     service_id: 3,
-    price: "$60"
+    price: 60000
   },
   {
     vet_id: 3,
