@@ -26,6 +26,9 @@
         <% @vets.each do |vet| %>
         <li>
           <%= link_to "#{vet.name}", vet_path(vet.id) %>
+          <% if @current_user %>
+            <%= vet.favorite %>
+          <% end %>
         </li>
         <% end %>
         <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>

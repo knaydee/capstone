@@ -38,9 +38,8 @@ ActiveRecord::Schema.define(version: 20160305235020) do
   end
 
   create_table "user_vets", id: false, force: :cascade do |t|
-    t.integer "user_id",  null: false
-    t.integer "vet_id",   null: false
-    t.boolean "favorite"
+    t.integer "user_id", null: false
+    t.integer "vet_id",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160305235020) do
     t.datetime "updated_at", null: false
     t.string   "phone"
     t.string   "fax"
+    t.boolean  "favorite"
   end
 
 end

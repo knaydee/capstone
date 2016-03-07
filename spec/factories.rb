@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :change_avg_price_colum_type do
+    
+  end
   factory :pet do
     name "MyString"
     age 1

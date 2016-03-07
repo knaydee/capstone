@@ -76,38 +76,38 @@ services = [
   {
     name: "Bordatella (Oral)",
     service_type: "Vaccinations",
-    avg_cost: "$20-$30"
+    avg_cost: 2500
   },
   {
     name: "Rabies",
     service_type: "Vaccinations",
-    avg_cost: "$10-$15"
+    avg_cost: 1250
   },
   {
     name: "Office Calls",
     service_type: "General Care",
-    avg_cost: "$45-$55"
+    avg_cost: 5000
   },
 
   {
     name: "Heartworm Test",
     service_type: "Blood Tests",
-    avg_cost: "$45-$50"
+    avg_cost: 4750
   },
   {
     name: "Geriatric Screening",
     service_type: "Exams",
-    avg_cost: "$85-$110"
+    avg_cost: 9750
   },
   {
     name: "Allergy Testing",
     service_type: "Blood Tests",
-    avg_cost: "$200-$300"
+    avg_cost: 250002
   },
   {
     name: "Allergy Testing",
     service_type: "Skin Tests",
-    avg_cost: "$195-$250"
+    avg_cost: 22250
   },
 ]
 
@@ -150,12 +150,12 @@ service_vets = [
   {
     vet_id: 3,
     service_id: 3,
-    price: "$45"
+    price: 4500
   },
   {
     vet_id: 1,
     service_id: 3,
-    price: "$90"
+    price: 9000
   },
 ]
 

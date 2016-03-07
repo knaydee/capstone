@@ -25,7 +25,6 @@
 <div ng-controller="vetsCtrl">
   <ul>
     <li ng-click="loadVet(vet)" ng-repeat="vet in vets">{{vet.name}}</li>
-
   </ul>
   <div ng-show="currentVet.id">
     <p>Address: {{currentVet.address}}</p>
