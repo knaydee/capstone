@@ -2,6 +2,16 @@
 <%= text_field_tag :search, params[:search], placeholder: "Search Vets" %>
 <%= submit_tag "Search" %>
 <% end %>
+<div>
+  <ul id="tabs">
+    <li data-target="myvets-tab" class="current">My Vets</li>
+    <li data-target="mypets-tab">My Pets</li>
+  </ul>
+  <div class="tabs-container">
+    <div id="myvets-tab" class="tab current">list favorited vets here</div>
+    <div id="mypets-tab" class="tab">list users pets here</div>
+  </div>
+</div>
 <div class="container">
   <div class="page-header">
       <% if @current_user %>
@@ -10,24 +20,13 @@
         <h1 id="timeline">Welcome to Pet Stop</h1>
       <% end %>
 
-<div>
-  <ul id="tabs">
-    <li data-target="myvets-tab" class="current">My Vets</li>
-    <li data-target="grooming-tab">My grooming</li>
-    <li data-target="blah-tab">My blah</li>
-  </ul>
-  <div class="tabs-container">
-    <div id="myvets-tab" class="tab current">my vets</div>
-    <div id="grooming-tab" class="tab">grooming</div>
-    <div id="blah-tab" class="tab">blah</div>
-  </div>
-</div>
       <ul>
         <% @vets.each do |vet| %>
         <li>
           <%= link_to "#{vet.name}", vet_path(vet.id) %>
           <% if @current_user %>
-            <%= vet.favorite %>
+            <% @user_vets.each do |user_vet| %>
+            <% end %>
           <% end %>
         </li>
         <% end %>

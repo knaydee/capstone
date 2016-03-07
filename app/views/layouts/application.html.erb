@@ -8,8 +8,8 @@
 </head>
 
 <%= render 'navbar' %>
-<body ng-app="petStopApp">
 <%= yield %>
+<body ng-app="petStopApp">
   <div id="tabs" ng-controller="TabsCtrl">
         <ul>
             <li ng-repeat="tab in tabs"
@@ -42,6 +42,7 @@
       </div>
     <% end %>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'main' %>
     <%= javascript_include_tag 'petstop' %>
     <%= javascript_include_tag 'dataFactory' %>

@@ -166,7 +166,7 @@ end
 
 user_vets = [
   {
-    user_id: 1,
+    user_id: 4,
     vet_id: 1,
     favorite: true
   },
@@ -182,15 +182,61 @@ user_vets = [
   },
   {
     user_id: 2,
-    vet_id: 2
+    vet_id: 2,
+    favorite: true
   },
   {
     user_id: 1,
-    vet_id: 3
+    vet_id: 3,
+    favorite: false
   },
 ]
 
 user_vets.each do |uv|
   user_vet = UserVet.new(uv)
   user_vet.save(validate: false)
+end
+
+pets = [
+  {
+    name: "Fiona",
+    age: 9,
+    breed: "poodle-mix",
+    weight: 16,
+    size: "small",
+    species: "dog",
+    sex: "female"
+  },
+  {
+    name: "Finnigan",
+    age: 2,
+    breed: "doxie-poo",
+    weight: 9,
+    size: "small",
+    species: "dog",
+    sex: "male"
+  },
+  {
+    name: "Noah",
+    age: 12,
+    breed: "siamese",
+    weight: 10,
+    size: "small",
+    species: "cat",
+    sex: "male"
+  },
+  {
+    name: "Anna",
+    age: 9,
+    breed: "siamese",
+    weight: 20,
+    size: "small",
+    species: "cat",
+    sex: "female"
+  },
+]
+
+pets.each do |p|
+  pet = Pet.new(p)
+  pet.save(validate: false)
 end

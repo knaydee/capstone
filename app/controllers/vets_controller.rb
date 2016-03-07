@@ -9,7 +9,6 @@ class VetsController < ApplicationController
     end
     @all_vets = Vet.all
     render json: @all_vets
-
   end
 
   def show
@@ -20,7 +19,6 @@ class VetsController < ApplicationController
       sv_id = sv.service_id
       Service.find(sv_id)
     end
-    render layout: false
   end
 
   def new
@@ -53,7 +51,7 @@ class VetsController < ApplicationController
   def destroy
     id = params[:id]
     Vet.destroy(id)
-    redirect_to vets_path
+    redirect_to root_path
   end
 
   private

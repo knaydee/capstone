@@ -1,5 +1,6 @@
 class AddFavoriteColumnToVets < ActiveRecord::Migration
   def change
-    add_column :vets, :favorite, :boolean
+    remove_column :vets, :favorite, :boolean
+    add_column :user_vets, :favorite, :boolean
   end
 end
