@@ -9,6 +9,7 @@
 
 <%= render 'navbar' %>
 <body ng-app="petStopApp">
+<%= yield %>
   <div id="tabs" ng-controller="TabsCtrl">
         <ul>
             <li ng-repeat="tab in tabs"
@@ -27,7 +28,11 @@
 
   </ul>
   <div ng-show="currentVet.id">
-    Address: {{currentVet.address}}
+    <p>Address: {{currentVet.address}}</p>
+    <p>Website: {{currentVet.url}}</p>
+    <p>Email: {{currentVet.email}}</p>
+    <p>Phone: {{currentVet.phone}}</p>
+    <p>Fax: {{currentVet.fax}}</p>
   </div>
 </div>
   <div class="container">
@@ -37,7 +42,6 @@
         <% end %>
       </div>
     <% end %>
-    <%= yield %>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <%= javascript_include_tag 'main' %>
     <%= javascript_include_tag 'petstop' %>
