@@ -9,13 +9,25 @@
       <% else %>
         <h1 id="timeline">Welcome to Pet Stop</h1>
       <% end %>
+
+<div>
+  <ul id="tabs">
+    <li data-target="myvets-tab" class="current">My Vets</li>
+    <li data-target="grooming-tab">My grooming</li>
+    <li data-target="blah-tab">My blah</li>
+  </ul>
+  <div class="tabs-container">
+    <div id="myvets-tab" class="tab current">my vets</div>
+    <div id="grooming-tab" class="tab">grooming</div>
+    <div id="blah-tab" class="tab">blah</div>
+  </div>
+</div>
       <ul>
         <% @vets.each do |vet| %>
         <li>
           <%= link_to "#{vet.name}", vet_path(vet.id) %>
-          <!-- <% if @current_user %>
-          <% end %> -->
         </li>
         <% end %>
         <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
   </div>
+</div>

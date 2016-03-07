@@ -4,7 +4,6 @@
 <p><%= @vet.email %></p>
 <p><%= @vet.phone %></p>
 <p><%= @vet.fax %></p>
-<p><%= @vet.favorite %></p>
 
 <%= form_for @vet, url: {action: @action}, :html => { :class => "form" } do |f| %>
   <%= f.select :services, options_from_collection_for_select(@services, "id", "service_type"), class: "form-control", include_blank: "Select Service" %><br>

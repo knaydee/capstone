@@ -3,11 +3,33 @@
 <head>
   <title>Pet Stop</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 
-<body>
+<%= render 'navbar' %>
+<body ng-app="petStopApp">
+  <div id="tabs" ng-controller="TabsCtrl">
+        <ul>
+            <li ng-repeat="tab in tabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView" style="display:none">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+
+</div>
+<div ng-controller="vetsCtrl">
+  <ul>
+    <li ng-click="loadVet(vet)" ng-repeat="vet in vets">{{vet.name}}</li>
+
+  </ul>
+  <div ng-show="currentVet.id">
+    Address: {{currentVet.address}}
+  </div>
+</div>
   <div class="container">
     <% if !flash.empty? %>
       <div class="flash">
@@ -15,8 +37,10 @@
         <% end %>
       </div>
     <% end %>
-    <%= render 'navbar' %>
     <%= yield %>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <%= javascript_include_tag 'main' %>
+    <%= javascript_include_tag 'petstop' %>
+    <%= javascript_include_tag 'dataFactory' %>
 </body>
 </html>

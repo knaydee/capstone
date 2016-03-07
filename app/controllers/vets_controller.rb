@@ -7,6 +7,9 @@ class VetsController < ApplicationController
     else
       @vets = Vet.all.order('name DESC')
     end
+    @all_vets = Vet.all
+    render json: @all_vets
+
   end
 
   def show
@@ -17,6 +20,7 @@ class VetsController < ApplicationController
       sv_id = sv.service_id
       Service.find(sv_id)
     end
+    render layout: false
   end
 
   def new
