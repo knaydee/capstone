@@ -164,38 +164,38 @@ service_vets.each do |sv|
   service_vet.save(validate: false)
 end
 
-user_vets = [
-  {
-    user_id: 4,
-    vet_id: 1,
-    favorite: true
-  },
-  {
-    user_id: 2,
-    vet_id: 1,
-    favorite: false
-  },
-  {
-    user_id: 3,
-    vet_id: 1,
-    favorite: true
-  },
-  {
-    user_id: 2,
-    vet_id: 2,
-    favorite: true
-  },
-  {
-    user_id: 1,
-    vet_id: 3,
-    favorite: false
-  },
-]
-
-user_vets.each do |uv|
-  user_vet = UserVet.new(uv)
-  user_vet.save(validate: false)
-end
+# user_vets = [
+#   {
+#     user_id: 4,
+#     vet_id: 1,
+#     favorite: true
+#   },
+#   {
+#     user_id: 2,
+#     vet_id: 1,
+#     favorite: false
+#   },
+#   {
+#     user_id: 3,
+#     vet_id: 1,
+#     favorite: true
+#   },
+#   {
+#     user_id: 2,
+#     vet_id: 2,
+#     favorite: true
+#   },
+#   {
+#     user_id: 1,
+#     vet_id: 3,
+#     favorite: false
+#   },
+# ]
+#
+# user_vets.each do |uv|
+#   user_vet = UserVet.new(uv)
+#   user_vet.save(validate: false)
+# end
 
 pets = [
   {

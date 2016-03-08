@@ -36,8 +36,11 @@ def create_primary
   id = params[:id]
   @vet = Vet.find(id)
   @user = User.find(@current_user.id)
-  @user.vets << @vet
-  flash[:notice] = 'Vet was saved.'
+  if !@vet && !@user
+    @user.vets << @vet
+    flash[:notice] = 'Vet was added to your list'
+  end
+  flash[:notice] = 'Vet was not added to your list'
   redirect_to root_path
 end
 

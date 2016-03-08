@@ -16,16 +16,24 @@
   <div class="page-header">
       <% if @current_user %>
         <h1 id="timeline">Hello, <%= "#{@current_user.username}" %></h1>
+          <% @current_user.vets.each do |vet| %>
+          <ul>
+            <li>
+              <%= link_to "#{vet.name}", vet_path(vet.id)%>
+            </li>
+          </ul>
+          <% end %>
       <% else %>
         <h1 id="timeline">Welcome to Pet Stop</h1>
+          <% @vets.each do |vet| %>
+          <ul>
+            <li>
+              <%= link_to "#{vet.name}", vet_path(vet.id) %>
+            </li>
+          </ul>
+          <% end %>
       <% end %>
 
-      <ul>
-        <% @vets.each do |vet| %>
-        <li>
-          <%= link_to "#{vet.name}", vet_path(vet.id) %>
-        </li>
-        <% end %>
         <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
   </div>
 </div>
