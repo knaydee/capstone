@@ -5,5 +5,5 @@ class ServiceVet < ActiveRecord::Base
   validates :price, presence: true
   validates_numericality_of :price, :greater_than => 0
 
-  alias_method :primary_vet, :favorite
+  alias_attribute :primary_vet, :favorite
 end
