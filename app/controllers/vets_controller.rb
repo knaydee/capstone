@@ -27,12 +27,7 @@ class VetsController < ApplicationController
   end
 
   def create
-    vet = Vet.create(vet_params[:vet])
-    user_vet = UserVet.new
-    user_vet.user_id = session[:user_id]
-    @uservet_id = user_vet.user_id
-    user_vet.vet_id = vet.id
-    user_vet.save
+    Vet.create(vet_params[:vet])
     redirect_to root_path
   end
 

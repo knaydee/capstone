@@ -6,11 +6,15 @@
 <p><%= @vet.fax %></p>
 
 <%= form_for @vet, url: {action: @action}, :html => { :class => "form" } do |f| %>
-  <%= f.select :services, options_from_collection_for_select(@services, "id", "service_type"), class: "form-control", include_blank: "Select Service" %><br>
+  <%= f.select :services, options_from_collection_for_select(@services, "id", "name"), class: "form-control", include_blank: "Select Service" %><br>
 <% end %>
 
 <% @services.each do |s| %>
-  <%= s.name %> | <%= s.service_type %> |
+<ul>
+  <li><%= link_to "#{s.name}", service_path(s.id)%></li>
+</ul>
+
+
 <% end %>
 
 
