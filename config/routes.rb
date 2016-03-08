@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :vets
   resources :services
 
-  post 'vets/:id/create_primary' => 'vets#create_primary', as: :primary
+  post 'vets/:id/create_uservet' => 'vets#create_uservet', as: :favorite
 
 
   get '/logout' => 'sessions#destroy'
