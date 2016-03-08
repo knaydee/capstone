@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   resources :vets
   resources :services
+
+  post 'vets/:id/create_primary' => 'vets#create_primary', as: :primary
 
 
   get '/logout' => 'sessions#destroy'

@@ -10,13 +10,12 @@
 <% end %>
 
 <% @services.each do |s| %>
-<ul>
-  <li><%= link_to "#{s.name}", service_path(s.id)%></li>
-</ul>
-
-
+  <ul>
+    <li><%= link_to "#{s.name}", service_path(s.id)%></li>
+  </ul>
 <% end %>
 
 
 <%= link_to "Edit", edit_vet_path(@vet), method: :get, class: "btn btn-default" %></td>
 <%= link_to "Delete", vet_path(@vet), method: :delete, class: "btn btn-default", :confirm => "Are you sure?"%></td>
+<%= link_to "Primary", primary_path(@vet), method: :post, class: "btn btn-default" %></td>

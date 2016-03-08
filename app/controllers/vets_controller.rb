@@ -27,9 +27,19 @@ class VetsController < ApplicationController
   end
 
   def create
-    Vet.create(vet_params[:vet])
+    # creates a new vet using the params passed in
+    @vet = Vet.create(vet_params[:vet])
     redirect_to root_path
   end
+
+def create_primary
+  id = params[:id]
+  @vet = Vet.find(id)
+  @user = User.find(@current_user.id)
+  @user.vets << @vet
+  flash[:notice] = 'Vet was saved.'
+  redirect_to root_path
+end
 
   def edit
     id = params[:id]

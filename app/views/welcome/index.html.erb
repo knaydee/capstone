@@ -24,10 +24,6 @@
         <% @vets.each do |vet| %>
         <li>
           <%= link_to "#{vet.name}", vet_path(vet.id) %>
-          <% if @current_user %>
-            <% @user_vets.each do |user_vet| %>
-            <% end %>
-          <% end %>
         </li>
         <% end %>
         <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
