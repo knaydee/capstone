@@ -14,11 +14,13 @@ class VetsController < ApplicationController
   def show
     id = params[:id]
     @vet = Vet.find(id)
+    @user = User.find(@current_user.id)
     @service_vets = ServiceVet.where("vet_id = '#{id}'")
     @services = @service_vets.map do |sv|
       sv_id = sv.service_id
       Service.find(sv_id)
     end
+    @user_vet = UserVet.where(:user => @user, :vet => @vet).first
   end
 
   def new
@@ -36,7 +38,6 @@ def create_uservet
   id = params[:id]
   @vet = Vet.find(id)
   @user = User.find(@current_user.id)
-  @user_vet = UserVet.where("user_id = '#{@user.id}'", "vet_id = '#{@vet.id}'")
   @user.vets << @vet
   flash[:notice] = 'Vet was added to your list'
   redirect_to root_path
