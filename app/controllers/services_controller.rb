@@ -3,12 +3,14 @@ class ServicesController < ApplicationController
 
   def show
     id = params[:id]
+    vet_id = params[:vet_id]
     @service = Service.find(id)
-    @vet_services = ServiceVet.where("service_id = '#{id}'")
-    @services = @vet_services.map do |vs|
-      vs_id = vs.vet_id
-      Service.find(vs_id)
+    @vet = Vet.find(vet_id)
+    @vet_services = ServiceVet.where("vet_id = '#{id}'")
+    @services = @vet_services.map do |sv|
+      sv_id = sv.service_id
+      Service.find(sv_id)
     end
+    @vet_service = ServiceVet.where(:vet => @vet, :service => @service).first
   end
-
 end
