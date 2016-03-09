@@ -1,5 +1,6 @@
 class ChangeAvgCostColumnTypeInServices < ActiveRecord::Migration
   def change
-    change_column :services, :avg_cost, :integer
+    remove_column :services, :avg_cost, :string
+    add_column :services, :avg_cost, :integer
   end
 end
