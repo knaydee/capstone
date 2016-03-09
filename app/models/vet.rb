@@ -13,4 +13,9 @@ class Vet < ActiveRecord::Base
     where("name LIKE ?", "%#{search}%")
   end
 
+  def primary(current_user)
+    # instead of @vet , use self
+    # instead of @user, use current_user
+  end
+
 end

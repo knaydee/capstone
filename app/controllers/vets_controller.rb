@@ -58,9 +58,32 @@ end
     redirect_to root_path
   end
 
+  def destroy_uservet
+    id = params[:id]
+    @vet = Vet.find(id)
+    @user = User.find(@current_user.id)
+    @user.vets.delete(@vet)
+    redirect_to root_path
+  end
+
   def destroy
     id = params[:id]
     Vet.destroy(id)
+    redirect_to root_path
+  end
+
+  def set_primary
+    # find Vet for params[:id]
+    id = params[:id]
+    @vet = Vet.find(id)
+    # find all user vets for current_user
+    @user = User.find(@current_user.id)
+    # set primary_vet attr to false; look for something like update_all (something like @current_user.vets.update_all)
+    @user.user_vets.update_all(:favorite => false)
+    # set primary_vet attr to true
+    @user_vet = UserVet.where(:user => @user, :vet => @vet).first
+    @user_vet.primary_vet = true
+    @user_vet.save
     redirect_to root_path
   end
 

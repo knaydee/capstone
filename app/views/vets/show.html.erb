@@ -21,7 +21,5 @@
 <% if @user_vet == nil %>
   <%= link_to "Save to My Vet List", favorite_path(@vet), method: :post, class: "btn btn-default" %>
 <% else %>
-  <p>
-    Already on list
-  </p>
+  <%= link_to "Remove from My Vet List", unfavorite_path(@vet), method: :delete, class: "btn btn-default" %>
 <% end %>

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :change_avg_price_colum_type do
-    
+
   end
   factory :pet do
     name "MyString"
@@ -18,8 +18,8 @@ FactoryGirl.define do
   end
 
   factory :user_vet do
-    user_id 1
-    vet_id 1
+    user
+    vet
   end
 
   factory :service do
@@ -29,7 +29,6 @@ FactoryGirl.define do
   end
 
   factory :vet do
-    id 1
     name "Fiona's Favorite Vet"
     url "www.ffv.com"
     address "1234 W South St Seattle, WA 98103"

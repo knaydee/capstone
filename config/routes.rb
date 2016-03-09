@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :services
 
   post 'vets/:id/create_uservet' => 'vets#create_uservet', as: :favorite
+  patch 'vets/:id/set_primary' => 'vets#set_primary', as: :primary
+  delete 'vets/:id/destroy_uservet' => 'vets#destroy_uservet', as: :unfavorite
 
 
   get '/logout' => 'sessions#destroy'
