@@ -1,10 +1,8 @@
 <h1>Services</h1>
 
 <%= @service.name %>
-<%= @service.avg_cost %>
+<%= formatted_price(@service.avg_cost) %>
+
 <p>
-  <%= @services %>
-</p>
-<p>
-  <%= @vet_service.price %>
+  <%= formatted_price(@vet_service.price) %>
 </p>

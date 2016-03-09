@@ -11,10 +11,9 @@ FactoryGirl.define do
   end
 
   factory :service_vet do
-    service_id 1
-    vet_id 1
-    price 2150
-
+    vet
+    service
+    price 2500
   end
 
   factory :user_vet do
@@ -25,7 +24,7 @@ FactoryGirl.define do
   factory :service do
     name "Rabies Vaccination"
     service_type "Vaccinations"
-    avg_cost "$10-$15"
+    avg_cost 1250
   end
 
   factory :vet do
