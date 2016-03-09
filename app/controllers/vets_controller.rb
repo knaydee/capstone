@@ -34,17 +34,17 @@ class VetsController < ApplicationController
     redirect_to root_path
   end
 
-def create_uservet
-  id = params[:id]
-  @vet = Vet.find(id)
-  @user = User.find(@current_user.id)
-  @user.vets << @vet
-  flash[:notice] = 'Vet was added to your list'
-  redirect_to root_path
-rescue
-  flash[:notice] = 'Vet was not added to your list'
-  redirect_to vet_path(@vet)
-end
+  def create_uservet
+    id = params[:id]
+    @vet = Vet.find(id)
+    @user = User.find(@current_user.id)
+    @user.vets << @vet
+    flash[:notice] = 'Vet was added to your list'
+    redirect_to root_path
+  rescue
+    flash[:notice] = 'Vet was not added to your list'
+    redirect_to vet_path(@vet)
+  end
 
   def edit
     id = params[:id]

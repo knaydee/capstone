@@ -24,6 +24,11 @@
             <li>
               <%= link_to "#{vet.name}", vet_path(vet.id)%>
               <%= button_to "Set as Primary Vet", primary_path(vet), method: :patch, class: "btn btn-default" %>
+              <% if vet.primary(@current_user) %>
+              <p>
+                primary!
+              </p>
+              <% end %>
             </li>
           </ul>
           <% end %>

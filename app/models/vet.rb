@@ -15,7 +15,15 @@ class Vet < ActiveRecord::Base
 
   def primary(current_user)
     # instead of @vet , use self
+    vet = self.id
     # instead of @user, use current_user
+    current_user = User.find(current_user.id)
+    user_vet = UserVet.where(:user => current_user, :vet => vet).first
+    if user_vet.primary_vet
+      return true
+    else
+      return false
+    end
   end
 
 end
