@@ -3,11 +3,13 @@ FactoryGirl.define do
 
   end
   factory :pet do
-    name "MyString"
+    name "Fiona"
     age 1
-    breed "MyString"
+    breed "poodle"
     weight 1
-    size "MyString"
+    size "small"
+    species "dog"
+    sex "female"
   end
 
   factory :service_vet do

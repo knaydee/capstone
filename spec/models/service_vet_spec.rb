@@ -6,7 +6,7 @@ RSpec.describe ServiceVet, type: :model do
       expect(create(:service_vet)).to be_valid
     end
     it "is valid with a positive integer" do
-      expect(build(:service_vet, price: 1)).to be_valid
+      expect(build(:service_vet)).to be_valid
     end
     it "is invalid as 0" do
       expect(build(:service_vet, price: 0)).to be_invalid

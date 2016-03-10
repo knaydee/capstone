@@ -17,7 +17,7 @@
       <% if @current_user %>
         <h1 id="timeline">Hello, <%= "#{@current_user.username}" %></h1>
         <p>
-          Your Vets
+          My Vets
         </p>
           <% @current_user.vets.each do |vet| %>
           <ul>
