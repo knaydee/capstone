@@ -14,10 +14,14 @@ class VetsController < ApplicationController
   def show
     id = params[:id]
     @vet = Vet.find(id)
-    @service_vets = ServiceVet.where(vet_id: id)
-    @services = @service_vets.map do |sv|
-      sv_id = sv.service_id
-      Service.find(sv_id)
+      @service_vets = ServiceVet.where(vet_id: id)
+      @services = @service_vets.map do |sv|
+        sv_id = sv.service_id
+        Service.find(sv_id)
+      end
+    if @current_user
+      @user = User.find(@current_user.id)
+      @user_vet = UserVet.where(:user => @user, :vet => @vet).first
     end
   end
 

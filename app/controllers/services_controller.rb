@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   include ApplicationHelper
-  before_action :require_login
+  before_action :require_login, except: [:show]
 
   def show
     id = params[:id]
@@ -19,5 +19,5 @@ class ServicesController < ApplicationController
     @service = Service.new
     @action = "create"
   end
-  
+
 end
