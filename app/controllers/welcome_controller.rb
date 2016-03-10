@@ -7,4 +7,8 @@ class WelcomeController < ApplicationController
     end
     @vets = Vet.all
   end
+
+  def letsencrypt
+    render plain: ENV['LE_AUTH_RESPONSE']
+  end
 end

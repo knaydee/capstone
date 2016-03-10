@@ -17,10 +17,9 @@ Rails.application.routes.draw do
   patch 'vets/:id/set_primary' => 'vets#set_primary', as: :primary
   delete 'vets/:id/destroy_uservet' => 'vets#destroy_uservet', as: :unfavorite
 
-
   get '/logout' => 'sessions#destroy'
 
-
+  get "/.well-known/acme-challenge/#{ENV['LE_AUTH_REQUEST']}", to: 'welcome#letsencrypt'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
