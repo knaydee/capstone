@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :services
   end
 
+  resources :users do
+    resources :pets
+  end
+
   resources :sevices
 
   post 'vets/:id/create_uservet' => 'vets#create_uservet', as: :favorite
