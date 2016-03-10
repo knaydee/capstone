@@ -1,1 +1,8 @@
 <h1>All My Pets</h1>
+<% @pets.each do |pet| %>
+<ul>
+  <li>
+    <%= pet.name %>
+  </li>
+</ul>
+<% end %>

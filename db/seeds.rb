@@ -205,7 +205,8 @@ pets = [
     weight: 16,
     size: "small",
     species: "dog",
-    sex: "female"
+    sex: "female",
+    user_id: 4
   },
   {
     name: "Finnigan",
@@ -214,7 +215,8 @@ pets = [
     weight: 9,
     size: "small",
     species: "dog",
-    sex: "male"
+    sex: "male",
+    user_id: 4
   },
   {
     name: "Noah",
@@ -223,7 +225,8 @@ pets = [
     weight: 10,
     size: "small",
     species: "cat",
-    sex: "male"
+    sex: "male",
+    user_id: 4
   },
   {
     name: "Anna",
@@ -232,7 +235,8 @@ pets = [
     weight: 20,
     size: "small",
     species: "cat",
-    sex: "female"
+    sex: "female",
+    user_id: 4
   },
 ]
 
