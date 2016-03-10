@@ -14,13 +14,11 @@ class VetsController < ApplicationController
   def show
     id = params[:id]
     @vet = Vet.find(id)
-    @user = User.find(@current_user.id)
     @service_vets = ServiceVet.where(vet_id: id)
     @services = @service_vets.map do |sv|
       sv_id = sv.service_id
       Service.find(sv_id)
     end
-    @user_vet = UserVet.where(:user => @user, :vet => @vet).first
   end
 
   def new
@@ -29,7 +27,6 @@ class VetsController < ApplicationController
   end
 
   def create
-    # creates a new vet using the params passed in
     @vet = Vet.create(vet_params[:vet])
     redirect_to root_path
   end

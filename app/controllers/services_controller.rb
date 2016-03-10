@@ -14,4 +14,10 @@ class ServicesController < ApplicationController
     end
     @vet_service = ServiceVet.where(:vet => @vet, :service => @service).first
   end
+
+  def new
+    @service = Service.new
+    @action = "create"
+  end
+  
 end

@@ -55,8 +55,9 @@
       <% end %>
 
 
-      <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
-      <%= button_to "My Pets", user_pets_path(@current_user), method: :get, class: "btn btn-default" %>
-
+      <% if @current_user %>
+        <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
+        <%= button_to "My Pets", user_pets_path(@current_user), method: :get, class: "btn btn-default" %>
+      <% end %>
   </div>
 </div>
