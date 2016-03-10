@@ -26,6 +26,18 @@ class PetsController < ApplicationController
     @action = "update"
   end
 
+  def update
+    id = params[:id]
+    Pet.update(id, pet_params[:pet])
+    redirect_to user_pet_path(@current_user, id)
+  end
+
+  def destroy
+    id = params[:id]
+    Pet.destroy(id)
+    redirect_to user_pets_path(@current_user)
+  end
+
   private
 
   def pet_params
