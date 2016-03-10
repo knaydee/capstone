@@ -47,6 +47,10 @@ class VetsController < ApplicationController
     redirect_to vet_path(@vet)
   end
 
+  def create_servicevet
+
+  end
+
   def edit
     id = params[:id]
     @vet = Vet.find(id)
@@ -67,6 +71,10 @@ class VetsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy_servicevet
+
+  end
+  
   def destroy
     id = params[:id]
     Vet.destroy(id)

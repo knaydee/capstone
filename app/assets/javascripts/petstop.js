@@ -14,9 +14,8 @@ $(document).ready(function() {
 
   // add on to search form an event handler,
   $("#search").on("ajax:success", function(e, data, status, xhr) {
-   $("#new_article").append xhr.responseText
- ).on "ajax:error", (e, xhr, status, error) ->
-   $("#new_article").append "<p>ERROR</p>"
- }
-
+    $("#new_article").append xhr.responseText
+  }).on("ajax:error", function(e, xhr, status, error) {
+    $("#new_article").append "<p>ERROR</p>"
+  });
 });
