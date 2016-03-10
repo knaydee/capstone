@@ -2,13 +2,7 @@
 <% @pets.each do |pet| %>
 <ul>
   <li>
-    <%= pet.name %>
-    <%= pet.age %>
-    <%= pet.breed %>
-    <%= pet.weight %>
-    <%= pet.size %>
-    <%= pet.sex %>
-    <%= pet.species %>
+    <%= link_to "#{pet.name}", user_pet_path(@current_user.id, pet.id) %>
   </li>
 </ul>
 <% end %>
