@@ -21,9 +21,12 @@ class VetsController < ApplicationController
   end
 
   def create
-    @vet = Vet.create(vet_params[:vet])
-    redirect_to root_path
-    flash[:notice] = 'Vet was added, Would you also like to add....'
+    Vet.transaction do
+      @vet = Vet.create(vet_params[:vet])
+      @current_user.vets << @vet
+    end
+      redirect_to root_path
+      flash[:notice] = 'Vet was added'
   end
 
   def create_uservet
