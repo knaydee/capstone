@@ -8,7 +8,7 @@ class VetsController < ApplicationController
       @vets = Vet.all.order('name DESC')
     end
     @all_vets = Vet.all
-    render json: @all_vets
+    render :index
   end
 
   def show
@@ -74,7 +74,7 @@ class VetsController < ApplicationController
   def destroy_servicevet
 
   end
-  
+
   def destroy
     id = params[:id]
     Vet.destroy(id)
