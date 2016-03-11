@@ -1,16 +1,6 @@
 class VetsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
-  def index
-    if params[:search]
-      @vets = Vet.search(params[:search]).order("name DESC")
-    else
-      @vets = Vet.all.order('name DESC')
-    end
-    @all_vets = Vet.all
-    render :index
-  end
-
   def show
     id = params[:id]
     @vet = Vet.find(id)
@@ -85,7 +75,7 @@ class VetsController < ApplicationController
     @user_vet = UserVet.where(:user => @user, :vet => @vet).first
     @user_vet.primary_vet = true
     @user_vet.save
-    redirect_to root_path
+    redirect_to uservets_path
   end
 
   private

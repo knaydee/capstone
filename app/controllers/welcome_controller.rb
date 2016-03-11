@@ -1,11 +1,12 @@
 class WelcomeController < ApplicationController
+
   def index
-    id = session[:user_id]
-    @user_vets = UserVet.where(user_id: id)
-    @user_vets.each do |user_vet|
-      @user_vet = user_vet
+    if params[:search]
+      @vets = Vet.search(params[:search]).order("name ASC")
+    else
+      @vets = Vet.all.order('name ASC')
     end
-    @vets = Vet.all
+    render :index
   end
 
   def letsencrypt
