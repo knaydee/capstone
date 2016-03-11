@@ -20,4 +20,31 @@ class ServicesController < ApplicationController
     @action = "create"
   end
 
+  def create
+    Service.transaction do
+      @service = Serivce.create(service_params[:service])
+      @current_user.services << @service
+    end
+      redirect_to root_path
+      flash[:notice] = 'Service was added'
+  end
+
+  def edit
+    id = params[:id]
+    @service = Service.find(id)
+    @action = "update"
+  end
+
+  def update
+    id = params[:id]
+    Service.update(id, service_params[:service])
+    redirect_to root_path
+  end
+
+  private
+
+  def service_params
+    params.permit(service:[:name, :service_type, :avg_cost, :price])
+  end
+
 end
