@@ -12,7 +12,6 @@
 
 <%= link_to "Edit", edit_vet_path(@vet), method: :get, class: "btn btn-default" %>
 <%= link_to "Delete", vet_path(@vet), method: :delete, class: "btn btn-default", data: { confirm: "Last chance...you sure?" } %>
-<%= link_to "Add Service", new_vet_service_path(@vet), method: :get, class: "btn btn-default" %>
 <% if @user_vet == nil %>
   <%= link_to "Save to My Vet List", favorite_path(@vet), method: :post, class: "btn btn-default" %>
 <% else %>

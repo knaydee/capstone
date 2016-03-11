@@ -3,12 +3,7 @@
   <% @vets.each do |vet| %>
   <ul>
     <li>
-      <p><%= vet.name %></p>
-      <p><%= link_to "#{vet.url}", vet.url, :target => '_blank' %></p>
-      <p><%= vet.address %></p>
-      <p><%= mail_to "#{vet.email}" %></p>
-      <p><%= vet.phone %></p>
-      <p><%= vet.fax %></p>
+      <p><%= link_to vet.name, vet_path(vet.id) %></p>
     </li>
   </ul>
   <% end %>
