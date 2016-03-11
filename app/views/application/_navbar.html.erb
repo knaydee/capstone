@@ -1,6 +1,7 @@
 <div class='navbar navbar-default'>
   <%= link_to 'Home', root_path, class:"btn btn-nav"%>
   <% if @current_user %>
+    <%= link_to "My Vets", uservets_path(@current_user), class: "btn btn-nav"%>
     <%= link_to "My Pets", user_pets_path(@current_user), class: "btn btn-nav"%>
     <%= link_to "Logout", logout_path, class: "btn btn-nav" %>
   <% else %>

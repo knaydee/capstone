@@ -4,36 +4,6 @@
 <% end %>
 <div class="container">
   <div class="page-header">
-      <% if @current_user %>
-        <h1 id="timeline">Hello, <%= "#{@current_user.username}" %></h1>
-        <p>
-          My Vets
-        </p>
-          <% @current_user.vets.each do |vet| %>
-          <ul>
-            <li>
-              <%= link_to "#{vet.name}", vet_path(vet.id)%>
-              <% if vet.primary(@current_user) %>
-                <p>
-                  primary!
-                </p>
-              <% else %>
-                <%= button_to "Set as Primary Vet", primary_path(vet), method: :patch, class: "btn btn-default" %>
-              <% end %>
-            </li>
-          </ul>
-          <% end %>
-          <p>
-            All Vets
-          </p>
-          <% @vets.each do |vet| %>
-              <ul>
-                <li>
-                  <%= link_to "#{vet.name}", vet_path(vet.id) %>
-                </li>
-              </ul>
-          <% end %>
-      <% else %>
         <h1 id="timeline">Welcome to Pet Stop</h1>
         <% @vets.each do |vet| %>
         <ul>
@@ -42,7 +12,6 @@
           </li>
         </ul>
         <% end %>
-      <% end %>
 
 
       <% if @current_user %>
