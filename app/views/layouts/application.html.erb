@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Pet Stop</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link href="/favicon.ico" rel="shortcut icon" type="image/png">
   <%= csrf_meta_tags %>
