@@ -41,6 +41,12 @@ class ServicesController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    id = params[:id]
+    Service.destroy(id)
+    redirect_to root_path
+  end
+
   private
 
   def service_params
