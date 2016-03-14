@@ -21,9 +21,13 @@ class ServicesController < ApplicationController
   end
 
   def create
+    # how do I get @vet??
     Service.transaction do
-      @service = Serivce.create(service_params[:service])
-      @current_user.services << @service
+      vet_id = params[:vet_id]
+      price = params[:price]
+      @vet = Vet.find(vet_id)
+      @service = Service.create(service_params[:service])
+      @service_vet = ServiceVet.create({vet: @vet, service: @service, price: price})
     end
       redirect_to root_path
       flash[:notice] = 'Service was added'

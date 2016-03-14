@@ -3,14 +3,16 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  resources :vets
+  resources :vets do
+    resources :services
+  end
 
   resources :users do
     resources :pets
   end
   get 'users/:id/vet_index' => 'users#vet_index', as: :uservets
 
-  resources :sevices
+  resources :services
 
   post 'vets/:id/create_uservet' => 'vets#create_uservet', as: :favorite
 

@@ -3,9 +3,12 @@
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control", :required => true %>
+      <%= f.label :price %>
+      <%= text_field_tag :price, nil, class: "form-control", :required => true %>
+
     </div>
 
-    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+    <%= f.hidden_field :vet_id, :value => params[:vet_id] %>
   </fieldset>
   <%= f.submit class: "btn btn-info" %>
 <% end %>

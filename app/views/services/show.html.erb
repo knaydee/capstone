@@ -6,3 +6,7 @@
 <p>
   <%= formatted_price(@vet_service.price) %>
 </p>
+
+<% if @current_user %>
+  <%= button_to "Add a Service", new_vet_service_path, method: :get, class: "btn btn-default" %>
+<% end %>
