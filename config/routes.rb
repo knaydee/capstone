@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   resources :vets do
-    resources :services
+    resources :services do
+      delete '/destroy_servicevet' => 'services#destroy_servicevet', as: :delete_servicevet
+    end
   end
 
   resources :users do

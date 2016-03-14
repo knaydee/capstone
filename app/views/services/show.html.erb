@@ -1,7 +1,13 @@
 <h1>Services</h1>
 
 <%= @service.name %>
-<%= formatted_price(@service.avg_cost) %>
+<% if @service.avg_cost %>
+  <%= formatted_price(@service.avg_cost) %>
+<% else %>
+  <p>
+    Average cost unknown at this time
+  </p>
+<% end %>
 
 <p>
   <%= formatted_price(@vet_service.price) %>
@@ -9,4 +15,7 @@
 
 <% if @current_user %>
   <%= button_to "Add a Service", new_vet_service_path, method: :get, class: "btn btn-default" %>
+  <%= link_to "Edit", edit_vet_service_path(@vet.id, @service), method: :get, class: "btn btn-default" %>
+  <%= link_to "Delete", vet_service_delete_servicevet_path(@vet, @service), method: :delete, class: "btn btn-default", data: { confirm: "Last chance...you sure?" } %>
+
 <% end %>

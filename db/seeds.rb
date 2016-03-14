@@ -145,7 +145,7 @@ service_vets = [
   {
     vet_id: 4,
     service_id: 3,
-    price: 60000
+    price: 6000
   },
   {
     vet_id: 3,

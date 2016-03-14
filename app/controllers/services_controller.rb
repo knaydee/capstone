@@ -12,7 +12,7 @@ class ServicesController < ApplicationController
       sv_id = sv.service_id
       Service.find(sv_id)
     end
-    @vet_service = ServiceVet.where(:vet => @vet, :service => @service).first
+    @vet_service = ServiceVet.where(:vet => @vet, :service => @service.id).first
   end
 
   def new
@@ -21,7 +21,6 @@ class ServicesController < ApplicationController
   end
 
   def create
-    # how do I get @vet??
     Service.transaction do
       vet_id = params[:vet_id]
       price = params[:price]
@@ -35,14 +34,33 @@ class ServicesController < ApplicationController
 
   def edit
     id = params[:id]
+    vet_id = params[:vet_id]
+    @vet = Vet.find(vet_id)
     @service = Service.find(id)
     @action = "update"
   end
 
   def update
+    # Need to get price to show up on the form
     id = params[:id]
-    Service.update(id, service_params[:service])
+    price = params[:price]
+    Service.update(id, service_params[:service], price)
     redirect_to root_path
+  end
+
+  def destroy_servicevet
+    Service.transaction do
+      service_id = params[:service_id]
+      vet_id = params[:vet_id]
+      @service = Service.find(service_id)
+      @vet = Vet.find(vet_id)
+      @service_vet = ServiceVet.where(:vet => @vet, :service => @service).first
+      sv_id = @service_vet.id
+      ServiceVet.destroy(sv_id)
+    end
+    redirect_to root_path
+    flash[:notice] = 'Service was deleted'
+
   end
 
   def destroy
