@@ -1,0 +1,8 @@
+<h1>All Vets</h1>
+<% @vets.each do |vet| %>
+<ul>
+  <li>
+    <%= link_to "#{vet.name}" %>
+  </li>
+</ul>
+<% end %>

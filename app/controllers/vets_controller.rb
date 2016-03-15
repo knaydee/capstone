@@ -1,6 +1,10 @@
 class VetsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
+  def index
+    @vets = Vet.all.order('name ASC')
+  end
+
   def show
     id = params[:id]
     @vet = Vet.find(id)
