@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'httparty'
 
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'

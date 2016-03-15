@@ -9,6 +9,6 @@
   <% end %>
 <% end %>
 <% if @current_user %>
-  <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
+    <%= link_to '<i class="fi-plus"></i> Add a Vet'.html_safe, new_vet_path, method: :get, class: "button" %>
   <% end %>
 </div>
