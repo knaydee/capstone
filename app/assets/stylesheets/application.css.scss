@@ -22,20 +22,8 @@
  @import "foundation_and_overrides";
 /* Add imports of custom sass/scss files here */
 
- #tabs li {
-  display: inline-block;
-  padding: 10px;
-  margin: 3px;
-  border: 1px solid black;
-}
-#tabs > li.current {
-    background-color: #400;
-  color: #fff;
+$primary-color: #4DC71F;
 
-}
-.tab {
-  display:none;
-}
-.tab.current {
-  display: block;
+body {
+  background-image: url(fiona_background.jpg);
 }

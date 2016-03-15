@@ -38,6 +38,8 @@ class ServicesController < ApplicationController
     @vet = Vet.find(vet_id)
     @service = Service.find(id)
     @action = "update"
+    @service_vet = ServiceVet.where(:vet => @vet, :service => @service).first
+    @price = @service_vet.price
   end
 
   def update

@@ -1,11 +1,12 @@
 <h3><%= @pet.name %></h3>
-<%= image_tag @pet.pet_photo.url(:square) %>
+<%= image_tag @pet.pet_photo.url(:thumb) %>
 <%= @pet.age %>
 <%= @pet.breed %>
 <%= @pet.weight %>
 <%= @pet.size %>
 <%= @pet.sex %>
 <%= @pet.species %>
+
 
 <%= link_to "Edit", edit_user_pet_path(@current_user, @pet), method: :get, class: "btn btn-default" %>
 <%= link_to "Delete", user_pet_path(@current_user, @pet), method: :delete, class: "btn btn-default", data: { confirm: "Last chance...you sure?" } %>

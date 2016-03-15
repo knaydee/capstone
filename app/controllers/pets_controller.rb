@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   before_action :require_login
 
   def index
-    @pets = Pet.all
+    @pets = Pet.all.order('name ASC')
   end
 
   def show
