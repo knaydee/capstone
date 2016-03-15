@@ -3,19 +3,17 @@
     <% if @current_user %>
     <h1 id="timeline">Hello,
       <%= "#{@current_user.username}" %></h1>
-  <% else %>
-    <h1 id="timeline">Welcome to Pet Stop</h1>
     <% end %>
       <%= form_tag(root_path, :method => "get", id: "search-form") do %>
       <div class="input-group large-4 columns">
         <%= text_field_tag :search, params[:search], placeholder: "Search Vets", class: "input-group-field" %>
-        <div class="input-group-button">
+        <div class="input-group-button button">
           <%= submit_tag "Search", class: "button" %>
         </div>
-    </div>
-    <% end %>
+      </div>
+      <% end %>
     <div class="welcome-button">
-      <%= button_to "See all Vets", vets_path, method: :get, class: "btn btn-default" %>
+      <%= button_to "See all Vets", vets_path, method: :get, class: "button info" %>
     </div>
     <div id="vet-info">
       <% if params[:search] %>

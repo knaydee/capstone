@@ -12,14 +12,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="row">
-  <div class="large-12 columns">
-    <div class="navbar">
-      <%= render 'navbar' %>
+  <header id="header">
+    <%= image_tag("/assets/PetStopLogo-hand.png") %>
+  </header>
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="navbar">
+        <%= render 'navbar' %>
+      </div>
     </div>
-    <%= yield %>
   </div>
-</div>
+<%= yield %>
 <div class="background">
 </div>
 <div class="flash">

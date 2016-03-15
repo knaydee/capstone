@@ -25,7 +25,15 @@
 
 $primary-color: #4DC71F;
 
-.input-group-button {
-  height: 100%;
-  width: 10%;
+.info {
+  background-color: #a0d3e8;
+  color: #333333;
+}
+
+img {
+  height: 6em;
+}
+
+.button, #search {
+  border-radius: .5em;
 }
