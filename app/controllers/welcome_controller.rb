@@ -5,6 +5,7 @@ class WelcomeController < ApplicationController
     puts params
     if params[:search]
       @vets = Vet.search(params[:search]).order("name ASC")
+      puts "Helllo"
     else
       @vets = Vet.all.order('name ASC')
     end
