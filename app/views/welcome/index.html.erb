@@ -1,17 +1,28 @@
+<header id="header">
+  <div class="title-holder">
+    <div class="title">
+      <%= link_to image_tag('PetStopLogo-hand.jpg'), url_for({:controller => 'welcome', :action => 'index'}) %>
+    </div>
+  </div>
+</header>
+
 <div class>
   <div class="page-header">
     <% if @current_user %>
     <h1 id="timeline">Hello,<%= " #{@current_user.username}" %></h1>
     <% end %>
       <%= form_tag(root_path, :method => "get", id: "search-form") do %>
-      <div class="input-group large-4 columns">
+      <div class="input-group small-2 large-4 columns">
         <%= text_field_tag :search, params[:search], placeholder: "Search Vets", class: "input-group-field" %>
         <div class="input-group-button button">
           <%= submit_tag "Search", class: "button" %>
         </div>
       </div>
       <% end %>
-      <%= button_to "See all Vets", vets_path, method: :get, class: "button info" %>
+      <%= link_to image_tag('google.png'), "/auth/google" %>
+      <div class="vets-list">
+        <%= button_to "See all Vets", vets_path, method: :get, class: "button info" %>
+      </div>
       <div id="vet-info">
       <% if @params_search %>
         <% @vets.each do |vet| %>

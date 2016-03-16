@@ -29,7 +29,9 @@ $primary-color: #4DC71F;
   background-color: #a0d3e8;
   color: #333333;
 }
-
+.info:hover{
+  background-color: #333333;
+}
 img {
   height: 3em;
 }
@@ -57,3 +59,7 @@ img {
   margin-left: 33%;
   padding-top: 1em;
 }
+
+// .vets-list {
+//   margin-left: 34%;
+// }
