@@ -32,6 +32,7 @@ $primary-color: #4DC71F;
 .info:hover{
   background-color: #333333;
 }
+
 img {
   height: 3em;
 }
@@ -42,10 +43,10 @@ img {
 
 .navbar {
   // border:1px solid #ccc;
-  border-width:1px 0;
-  margin:0;
+  border-width: 1px 0;
+  margin: 0;
   // padding:15px;
-  text-align:center;
+  text-align: center;
   word-spacing: 10px;
   text-transform: uppercase;
 }
@@ -63,3 +64,7 @@ img {
 // .vets-list {
 //   margin-left: 34%;
 // }
+
+.welcome-buttons {
+  display: inline;
+}

@@ -19,9 +19,11 @@
         </div>
       </div>
       <% end %>
-      <%= link_to image_tag('google.png'), "/auth/google" %>
-      <div class="vets-list">
-        <%= button_to "See all Vets", vets_path, method: :get, class: "button info" %>
+      <div class="welcome-buttons">
+        <%= link_to image_tag('google.png'), "/auth/google" %>
+        <div class="vets-list">
+          <%= button_to "See all Vets", vets_path, method: :get, class: "button info" %>
+        </div>
       </div>
       <div id="vet-info">
       <% if @params_search %>
