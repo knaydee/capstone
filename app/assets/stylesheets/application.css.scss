@@ -37,3 +37,13 @@ img {
 .button, #search {
   border-radius: .5em;
 }
+
+.navbar {
+  // border:1px solid #ccc;
+  border-width:1px 0;
+  margin:0;
+  // padding:15px;
+  text-align:center;
+  word-spacing: 10px;
+  text-transform: uppercase;
+}

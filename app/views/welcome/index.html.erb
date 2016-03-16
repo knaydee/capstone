@@ -11,7 +11,7 @@
         </div>
       </div>
       <% end %>
-      <%= button_to "List all Vets", vets_path, method: :get, class: "button info" %>
+      <%= button_to "See all Vets", vets_path, method: :get, class: "button info" %>
       <div id="vet-info">
       <% if @params_search %>
         <% @vets.each do |vet| %>
