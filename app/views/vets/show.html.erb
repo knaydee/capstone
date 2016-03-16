@@ -1,17 +1,32 @@
-<p><%= @vet.name %></p>
-<p><%= link_to @vet.url %></p>
-<p><%= address_link(@vet.address) %></p>
-<p><%= mail_to @vet.email %></p>
-<p>Phone: <%= @vet.phone %></p>
-<p>Fax: <%= @vet.fax %></p>
+<div class="vet-info">
+  <div class="strong-name">
+  </div>
+  <h3><%= link_to @vet.name, @vet.url, target: "_blank" %></h3>
+  <p><%= address_link(@vet.address) %></p>
+  <p>Phone: <%= @vet.phone %></p>
+  <p>Fax: <%= @vet.fax %></p>
+  <p><%= mail_to @vet.email %></p>
+</div>
 
+<div class="services">
+  <h4>Available Services:</h4>
+  <% @service_vets.each do |service_vet| %>
+  <ul class="service">
+    <li>
+      <%= service_vet.service.name %>
+      <li>
+        <%= colorize_price(service_vet.price, service_vet.service.avg_cost) %>
+        <%= formatted_price(service_vet.service.avg_cost) %>
+      </li>
+    </li>
+  </ul>
+  <% end %>
+</div>
 
-<%= form_for @vet, url: {action: @action}, method: :get, :html => { :class => "form" } do |f| %>
-  <%= f.select :services, options_from_collection_for_select(@services, "id", "name"), class: "form-control", include_blank: "Select Service" %><br>
+<% if @current_user %>
+  <%= link_to "Edit", edit_vet_path(@vet), method: :get, class: "btn btn-default" %>
+  <%= link_to "Add Service", new_vet_service_path(@vet), method: :get, class: "btn btn-default" %>
 <% end %>
-
-<%= link_to "Edit", edit_vet_path(@vet), method: :get, class: "btn btn-default" %>
-<%= link_to "Delete", vet_path(@vet), method: :delete, class: "btn btn-default", data: { confirm: "Last chance...you sure?" } %>
 <% if @user_vet == nil %>
   <%= link_to "Save to My Vet List", favorite_path(@vet), method: :post, class: "btn btn-default" %>
 <% else %>

@@ -58,7 +58,6 @@ img {
   margin: 0;
   // padding:15px;
   text-align: center;
-  word-spacing: 10px;
   text-transform: uppercase;
 }
 
@@ -68,7 +67,8 @@ img {
 }
 
 .input-group {
-  margin-left: 34%;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 1em;
 }
 
@@ -77,14 +77,38 @@ img {
 // }
 
 .welcome-buttons {
-  display: inline;
-  margin-left: 42%;
+  text-align: center;
 }
 
-#vet-info {
+#vet-info, .vet-info {
   text-align: center;
 }
 
 ul {
   list-style-type: none;
+}
+
+.strong-name {
+  font-weight: bold;
+}
+
+.services {
+  text-align: center;
+}
+
+.hello {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.nav-bar {
+  float: left;
+  margin-top: 30px;
+  padding-left: 15px;
+}
+
+.logo {
+  float: left;
+  margin-top: 20px;
 }
