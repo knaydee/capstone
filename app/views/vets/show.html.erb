@@ -2,8 +2,8 @@
 <p><%= link_to @vet.url %></p>
 <p><%= address_link(@vet.address) %></p>
 <p><%= mail_to @vet.email %></p>
-<p><%= @vet.phone %></p>
-<p><%= @vet.fax %></p>
+<p>Phone: <%= @vet.phone %></p>
+<p>Fax: <%= @vet.fax %></p>
 
 
 <%= form_for @vet, url: {action: @action}, method: :get, :html => { :class => "form" } do |f| %>

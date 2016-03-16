@@ -23,16 +23,23 @@
  @import 'foundation-icons';
 /* Add imports of custom sass/scss files here */
 
-$primary-color: #4DC71F;
 
-.info {
-  background-color: #a0d3e8;
-  color: #333333;
+.google {
+  background-color: #FEFEFE;
+  color: #D74937;
+  border-color: #D74937;
+}
+
+.google:hover {
+  background-color: #D74937;
 }
 .info:hover{
-  background-color: #333333;
+  $lightness: -15%;
 }
 
+i {
+  font-size: 0.9rem;
+}
 img {
   height: 3em;
 }
@@ -57,7 +64,7 @@ img {
 }
 
 .input-group {
-  margin-left: 33%;
+  margin-left: 34%;
   padding-top: 1em;
 }
 
@@ -67,4 +74,5 @@ img {
 
 .welcome-buttons {
   display: inline;
+  margin-left: 42%;
 }

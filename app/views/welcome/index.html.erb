@@ -5,7 +5,6 @@
     </div>
   </div>
 </header>
-
 <div class>
   <div class="page-header">
     <% if @current_user %>
@@ -13,17 +12,15 @@
     <% end %>
       <%= form_tag(root_path, :method => "get", id: "search-form") do %>
       <div class="input-group small-2 large-4 columns">
-        <%= text_field_tag :search, params[:search], placeholder: "Search Vets", class: "input-group-field" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Vets by Name", class: "input-group-field" %>
         <div class="input-group-button button">
           <%= submit_tag "Search", class: "button" %>
         </div>
       </div>
       <% end %>
       <div class="welcome-buttons">
-        <%= link_to image_tag('google.png'), "/auth/google" %>
-        <div class="vets-list">
-          <%= button_to "See all Vets", vets_path, method: :get, class: "button info" %>
-        </div>
+        <%= link_to '<i class="fi-social-google-plus"></i> Sign In'.html_safe, "/auth/google", class: "button google" %>
+        <%= link_to "See all Vets", vets_path, method: :get, class: "button info" %>
       </div>
       <div id="vet-info">
       <% if @params_search %>
