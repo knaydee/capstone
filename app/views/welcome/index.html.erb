@@ -18,10 +18,6 @@
         </div>
       </div>
       <% end %>
-      <div class="welcome-buttons">
-        <%= link_to '<i class="fi-social-google-plus"></i> Sign In'.html_safe, "/auth/google", class: "button google" %>
-        <%= link_to "See all Vets", vets_path, method: :get, class: "button info" %>
-      </div>
       <div id="vet-info">
         <% if params[:search] %>
           <% if @vets.present? %>
@@ -31,5 +27,9 @@
               <%= params[:search] %></p>
           <% end %>
         <% end %>
+      </div>
+      <div class="welcome-buttons">
+        <%= link_to '<i class="fi-social-google-plus"></i> Sign In'.html_safe, "/auth/google", class: "button google" %>
+        <%= link_to "See all Vets", vets_path, method: :get, class: "button info" %>
       </div>
   </div>
