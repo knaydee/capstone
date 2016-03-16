@@ -1,6 +1,8 @@
 class WelcomeController < ApplicationController
 
   def index
+    puts "Hii"
+    puts params
     if params[:search]
       @vets = Vet.search(params[:search]).order("name ASC")
     else
