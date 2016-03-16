@@ -12,9 +12,7 @@
         </div>
       </div>
       <% end %>
-    <div class="welcome-button">
-      <%= button_to "See all Vets", vets_path, method: :get, class: "button info" %>
-    </div>
+      <%= button_to "List all Vets", vets_path, method: :get, class: "button info" %>
     <div id="vet-info">
       <% if params[:search] %>
         <% if @vets.present? %>

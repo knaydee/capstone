@@ -13,7 +13,11 @@
 </head>
 <body>
   <header id="header">
-    <%= image_tag("/assets/PetStopLogo-hand.png") %>
+    <div class="title-holder">
+      <div class="title">
+        <%= link_to image_tag('/assets/PetStopLogo-hand.png'), url_for({:controller => 'welcome', :action => 'index'}) %>
+      </div>
+    </div>
   </header>
   <div class="row">
     <div class="large-12 columns">
