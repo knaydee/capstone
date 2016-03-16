@@ -6,8 +6,9 @@ class WelcomeController < ApplicationController
     @params_search = params[:search]
     if params[:search]
       @vets = Vet.search(params[:search]).order("name ASC")
-      puts "Helllo"
-      puts @vets
+      puts "Helllo", Vet.search(params[:search])
+      puts params[:search]
+      puts Vet.search(params[:search])
     else
       @vets = Vet.all.order('name ASC')
     end
