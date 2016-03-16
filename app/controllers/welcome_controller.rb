@@ -3,9 +3,11 @@ class WelcomeController < ApplicationController
   def index
     puts "Hii"
     puts params
+    @params_search = params[:search]
     if params[:search]
       @vets = Vet.search(params[:search]).order("name ASC")
       puts "Helllo"
+      puts @vets
     else
       @vets = Vet.all.order('name ASC')
     end
