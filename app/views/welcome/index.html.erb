@@ -23,14 +23,13 @@
         <%= link_to "See all Vets", vets_path, method: :get, class: "button info" %>
       </div>
       <div id="vet-info">
-      <% if @params_search %>
-        <% @vets.each do |vet| %>
-        <ul>
-          <li>
-            <p><%= link_to vet.name, vet_path(vet.id) %></p>
-          </li>
-        </ul>
+        <% if params[:search] %>
+          <% if @vets.present? %>
+            <%= render "vet" %>
+          <% else %>
+            <p>There are no vets containing the term(s):
+              <%= params[:search] %></p>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
   </div>
