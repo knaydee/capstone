@@ -1,10 +1,14 @@
 <div class="vet-info">
-  <h2>My Pets</h2>
-  <% @pets.each do |pet| %>
-    <div class="pet-card">
-      <!-- <%= link_to "#{pet.name}", user_pet_path(@current_user.id, pet.id) %> -->
-      <%= image_tag pet.pet_photo.url(:thumb) %>
-    </div>
-  <% end %>
-  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_user_pet_path(@current_user.id), method: :get, class: "button info" %>
+
+<h2>My Pets</h2>
+<div class="row">
+    <% @pets.each do |pet| %>
+        <div class="small-2 large-4 columns">
+        <!-- <%= link_to "#{pet.name}", user_pet_path(@current_user.id, pet.id) %> -->
+        <%= image_tag pet.pet_photo.url(:thumb) %><br>
+        <%= pet.name %>
+        </div>
+    <% end %>
+  </div>
+<%= link_to '<i class="fi-plus"></i> New Pet'.html_safe, new_user_pet_path(@current_user.id), method: :get, class: "button info" %>
 </div>
