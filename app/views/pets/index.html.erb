@@ -1,10 +1,13 @@
-<h1>All My Pets</h1>
-<% @pets.each do |pet| %>
-<ul>
-  <li>
-    <%= link_to "#{pet.name}", user_pet_path(@current_user.id, pet.id) %>
-  </li>
-</ul>
-<% end %>
+<div class="vet-info">
 
-<%= button_to "Add a Pet", new_user_pet_path(@current_user.id), method: :get, class: "btn btn-default" %>
+  <h2>My Pets</h2>
+  <% @pets.each do |pet| %>
+  <ul>
+    <li>
+      <%= link_to "#{pet.name}", user_pet_path(@current_user.id, pet.id) %>
+    </li>
+  </ul>
+  <% end %>
+
+  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_user_pet_path(@current_user.id), method: :get, class: "button info" %>
+</div>
