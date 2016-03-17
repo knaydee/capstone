@@ -9,9 +9,10 @@
   <%= image_tag @current_user.image %>
 </div>
   <span class="nav-bar", id="bar">
-    <%= link_to "My Vets", uservets_path(@current_user), class: "btn btn-nav"%> |
-    <%= link_to "My Pets", user_pets_path(@current_user), class: "btn btn-nav"%> |
-    <%= link_to "Logout", logout_path, class: "btn btn-nav" %>
+    <%= link_to "All Vets", vets_path %> |
+    <%= link_to "My Vets", uservets_path(@current_user) %> |
+    <%= link_to "My Pets", user_pets_path(@current_user) %> |
+    <%= link_to "Logout", logout_path %>
   </span>
 <% else %>
     <span class="hello"><%= link_to '<i class="fi-social-google-plus"></i> Sign In With Google+'.html_safe, "/auth/google", class: "button google" %></span>
