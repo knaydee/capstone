@@ -1,12 +1,15 @@
-<h1>All Vets</h1>
-<% @vets.each do |vet| %>
-<ul>
-  <li>
-    <%= link_to vet.name, vet_path(vet.id)%>
-  </li>
-</ul>
-<% end %>
+<div class="vet-info">
 
-<% if @current_user %>
-    <%= link_to '<i class="fi-plus"></i> Add a Vet'.html_safe, new_vet_path, method: :get, class: "button" %>
-<% end %>
+  <h2>All Pet Stop Vets</h2>
+  <% @vets.each do |vet| %>
+  <ul>
+    <li>
+      <%= link_to vet.name, vet_path(vet.id)%>
+    </li>
+  </ul>
+  <% end %>
+
+  <% if @current_user %>
+  <%= link_to '<i class="fi-plus"></i> Add a Vet'.html_safe, new_vet_path, method: :get, class: "button" %>
+  <% end %>
+</div>

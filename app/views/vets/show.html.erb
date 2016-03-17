@@ -6,6 +6,14 @@
   <p>Phone: <%= @vet.phone %></p>
   <p>Fax: <%= @vet.fax %></p>
   <p><%= mail_to @vet.email %></p>
+  <% if @current_user %>
+  <%= link_to '<i class="fi-pencil"></i> Vet Info'.html_safe, edit_vet_path(@vet), method: :get, class: "button info" %>
+  <% end %>
+  <% if @user_vet == nil %>
+  <%= link_to '<i class="fi-star"></i> My Vet List'.html_safe, favorite_path(@vet), method: :post, class: "button info" %>
+  <% else %>
+  <%= link_to '<i class="fi-minus"></i> My Vet List'.html_safe, unfavorite_path(@vet), method: :delete, class: "btn btn-default" %>
+  <% end %>
 </div>
 
 <div class="services">
@@ -21,14 +29,7 @@
     </li>
   </ul>
   <% end %>
+  <% if @current_user %>
+  <%= link_to '<i class="fi-plus"></i> New Vet Service'.html_safe, new_vet_service_path(@vet), method: :get, class: "button info" %>
+  <% end %>
 </div>
-
-<% if @current_user %>
-  <%= link_to "Edit", edit_vet_path(@vet), method: :get, class: "btn btn-default" %>
-  <%= link_to "Add Service", new_vet_service_path(@vet), method: :get, class: "btn btn-default" %>
-<% end %>
-<% if @user_vet == nil %>
-  <%= link_to "Save to My Vet List", favorite_path(@vet), method: :post, class: "btn btn-default" %>
-<% else %>
-  <%= link_to "Remove from My Vet List", unfavorite_path(@vet), method: :delete, class: "btn btn-default" %>
-<% end %>
