@@ -23,6 +23,11 @@
  @import 'foundation-icons';
 /* Add imports of custom sass/scss files here */
 
+body {
+  background-image: url("pc_dog.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 .button {
   color: #000000;
@@ -37,6 +42,7 @@
 .google:hover {
   background-color: #D74937;
 }
+
 .info:hover{
   $lightness: -15%;
 }
@@ -44,6 +50,7 @@
 i {
   font-size: 0.9rem;
 }
+
 img {
   height: 3em;
 }
