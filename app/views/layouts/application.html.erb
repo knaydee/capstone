@@ -12,6 +12,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if !flash.empty? %>
+    <div class="flash">
+      <% flash.each do |key, value| %>
+        <%= value %>
+      <% end %>
+    </div>
+  <% else %>
+  <% end %>
   <div class="row">
     <div class="large-12 columns">
       <div class="navbar">
@@ -19,17 +27,8 @@
       </div>
     </div>
   </div>
-<%= yield %>
-<div class="flash">
-  <% if !flash.empty? %>
-    <div class="flash">
-      <% flash.each do |key, value| %>
-        <%= value %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'petstop' %>
+  <%= yield %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'petstop' %>
 </body>
 </html>
