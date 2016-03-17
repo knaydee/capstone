@@ -12,7 +12,7 @@
   <% if @user_vet == nil %>
   <%= link_to '<i class="fi-star"></i>'.html_safe, favorite_path(@vet), method: :post, class: "button info" %>
   <% else %>
-  <%= link_to '<i class="fi-x"></i>'.html_safe, unfavorite_path(@vet), method: :delete, class: "button info" %>
+  <%= link_to '<i class="fi-trash"></i>'.html_safe, unfavorite_path(@vet), method: :delete, class: "button info" %>
   <% end %>
 </div>
 

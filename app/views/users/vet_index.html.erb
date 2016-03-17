@@ -1,22 +1,19 @@
-<div class="container">
-  <div class="page-header">
-    <p>
-      My Vets
-    </p>
-      <% @current_user.vets.each do |vet| %>
-      <ul>
-        <li>
-          <%= link_to "#{vet.name}", vet_path(vet.id)%>
-          <% if vet.primary(@current_user) %>
-            <p>
-              primary!
-            </p>
-          <% else %>
-            <%= button_to "Set as Primary Vet", primary_path(vet), method: :patch, class: "btn btn-default" %>
-          <% end %>
-        </li>
-      </ul>
+<div class="vet-info">
+
+  <h2>
+    My Vets
+  </h2>
+  <% @current_user.vets.each do |vet| %>
+  <ul>
+    <li>
+      <%= link_to "#{vet.name}", vet_path(vet.id)%>
+      <% if vet.primary(@current_user) %>
+      <i class="fi-star"></i>
+      <% else %>
+      <%= link_to '<i class="fi-star", id="white-star"></i>'.html_safe, primary_path(vet), method: :patch %>
       <% end %>
-      <%= button_to "Add a Vet", new_vet_path, method: :get, class: "btn btn-default" %>
-  </div>
+    </li>
+  </ul>
+  <% end %>
+  <%= link_to '<i class="fi-plus"></i>'.html_safe, new_vet_path, method: :get, class: "button info" %>
 </div>
