@@ -8,7 +8,7 @@ class VetsController < ApplicationController
   def show
     id = params[:id]
     @vet = Vet.find(id)
-      @service_vets = ServiceVet.where(vet_id: id)
+    @service_vets = ServiceVet.where(vet_id: id)
     if @current_user
       @user = User.find(@current_user.id)
       @user_vet = UserVet.where(:user => @user, :vet => @vet).first
