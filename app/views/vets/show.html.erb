@@ -3,8 +3,8 @@
   </div>
   <h3><%= link_to @vet.name, @vet.url, target: "_blank" %></h3>
   <p><%= address_link(@vet.address) %></p>
-  <p>Phone: <%= @vet.phone %></p>
-  <p>Fax: <%= @vet.fax %></p>
+  <p>Phone: <%= number_to_phone(@vet.phone, area_code: true) %></p>
+  <p>Fax: <%= number_to_phone(@vet.fax, area_code: true) %></p>
   <p><%= mail_to @vet.email %></p>
   <% if @current_user %>
   <%= link_to '<i class="fi-pencil"></i>'.html_safe, edit_vet_path(@vet), method: :get, class: "button info" %>
