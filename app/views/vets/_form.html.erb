@@ -1,36 +1,37 @@
 <%= form_for @vet, url: {action: @action}, :html => { :class => "form" } do |f| %>
   <fieldset>
-    <div class="form-group">
-      <!-- <%= f.label :name %> -->
-      <%= f.text_field :name, class: "form-control", label: false, placeholder: "Name", :required => true %>
-    </div>
+    <h2>Enter Vet Info</h2>
+      <div class="form-group">
+        <!-- <%= f.label :name %> -->
+        <%= f.text_field :name, class: "form-control", label: false, placeholder: "Name", :required => true %>
+      </div>
 
-    <div class="form-group">
-      <!-- <%= f.label :url %> -->
-      <%= f.url_field :url, class: "form-control", label: false, placeholder: "URL" %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :url %> -->
+        <%= f.url_field :url, class: "form-control", label: false, placeholder: "URL" %>
+      </div>
 
-    <div class="form-group">
-      <!-- <%= f.label :address %> -->
-      <%= f.text_field :address, class: "form-control", label: false, placeholder: "Address" %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :address %> -->
+        <%= f.text_field :address, class: "form-control", label: false, placeholder: "Address" %>
+      </div>
 
-    <div class="form-group">
-      <!-- <%= f.label :email %> -->
-      <%= f.text_field :email, class: "form-control", label: false, placeholder: "Email" %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :email %> -->
+        <%= f.text_field :email, class: "form-control", label: false, placeholder: "Email" %>
+      </div>
 
-    <div class="form-group">
-      <!-- <%= f.label :phone %> -->
-      <%= f.text_field :phone, class: "form-control", label: false, placeholder: "Phone" %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :phone %> -->
+        <%= f.text_field :phone, class: "form-control", label: false, placeholder: "Phone" %>
+      </div>
 
-    <div class="form-group">
-      <!-- <%= f.label :fax %> -->
-      <%= f.text_field :fax, class: "form-control", label: false, placeholder: "Fax" %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :fax %> -->
+        <%= f.text_field :fax, class: "form-control", label: false, placeholder: "Fax" %>
+      </div>
 
-    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+      <%= f.hidden_field :user_id, :value => session[:user_id] %>
   </fieldset>
   <div class="submit"><%= f.submit class: "button info" %></div>
 <% end %>

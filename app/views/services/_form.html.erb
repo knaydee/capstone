@@ -1,13 +1,12 @@
 <%= form_for @service, url: {action: @action}, :html => { :class => "form" } do |f| %>
   <fieldset>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control", :required => true %>
-      <%= f.label :price %>
-      <%= text_field_tag :price, @price, class: "form-control", :required => true %>
-
-    </div>
-
+    <h2>Enter Service Info</h2>
+      <div class="form-group">
+        <!-- <%= f.label :name %> -->
+        <%= f.text_field :name, class: "form-control", label: false, placeholder: "Name", :required => true %>
+        <!-- <%= f.label :price %> -->
+        <%= text_field_tag :price, @price, class: "form-control", label: false, placeholder: "Price", :required => true %>
+      </div>
   </fieldset>
-  <%= f.submit class: "btn btn-info" %>
+  <div class="submit"><%= f.submit class: "button info" %></div>
 <% end %>

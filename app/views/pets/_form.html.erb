@@ -1,45 +1,47 @@
 <%= form_for @pet, multipart: true, url: {action: @action}, :html => { :class => "form" } do |f| %>
   <fieldset>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control", :required => true %>
-    </div>
-    <div class="form-group">
-    <%= f.label :pet_photo %>
-    <%= f.file_field :pet_photo %>
-  </div>
+    <h2>Enter Pet Info</h2>
+      <div class="form-group">
+        <!-- <%= f.label :name %> -->
+        <%= f.text_field :name, class: "form-control", label: false, placeholder: "Name", :required => true %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :age %>
-      <%= f.number_field :age, class: "form-control" %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :pet_photo %> -->
+        <%= f.file_field :pet_photo, label: false, placeholder: "Photo" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :breed %>
-      <%= f.text_field :breed, class: "form-control" %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :age %> -->
+        <%= f.number_field :age, class: "form-control", label: false, placeholder: "Age" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :weight %>
-      <%= f.number_field :weight, class: "form-control" %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :breed %> -->
+        <%= f.text_field :breed, class: "form-control", label: false, placeholder: "Breed" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :size %>
-      <%= f.select(:size, options_for_select([['small'], ['medium'], ['large']]), class: "form-control") %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :weight %> -->
+        <%= f.number_field :weight, class: "form-control", label: false, placeholder: "Weight (in lbs)" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :sex %>
-      <%= f.select(:sex, options_for_select([['male'], ['female']]), class: "form-control") %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :size %> -->
+        <%= f.select(:size, options_for_select([['small'], ['medium'], ['large']]), class: "form-control", label: false, placeholder: "Size", include_blank: "Select Size") %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :species %>
-      <%= f.select(:species, options_for_select([['dog'], ['cat'], ['other']]), class: "form-control") %>
-    </div>
+      <div class="form-group">
+        <!-- <%= f.label :sex %> -->
+        <%= f.select(:sex, options_for_select([['male'], ['female']]), class: "form-control", label: false, placeholder: "Sex", include_blank: "Male or Female?") %>
+      </div>
 
-    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+      <div class="form-group">
+        <!-- <%= f.label :species %> -->
+        <%= f.select(:species, options_for_select([['dog'], ['cat'], ['other']]), class: "form-control", label: false, placeholder: "Species", include_blank: "Select Type") %>
+      </div>
+
+      <%= f.hidden_field :user_id, :value => session[:user_id] %>
   </fieldset>
-  <%= f.submit class: "btn btn-info" %>
+  <div class="submit"><%= f.submit class: "button info" %></div>
 <% end %>
