@@ -17,6 +17,7 @@ gem 'httparty'
 
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
+gem 'foundation_rails_helper'
 
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
