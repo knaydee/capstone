@@ -1,15 +1,18 @@
 <% unless current_page?(controller: "welcome", action: "index") %>
   <%= link_to image_tag('PetStopLogo-hand.jpg'), url_for({:controller => 'welcome', :action => 'index'}), class: "logo" %>
 <% end %>
+
 <% if @current_user %>
-  <span class="hello">Hello, <%= @current_user.username %>
-    <%= image_tag @current_user.image %>
+<div class="user hello">
+  <span>Hello, <%= @current_user.username %>
   </span>
+  <%= image_tag @current_user.image %>
+</div>
   <span class="nav-bar">
     <%= link_to "My Vets", uservets_path(@current_user), class: "btn btn-nav"%> |
     <%= link_to "My Pets", user_pets_path(@current_user), class: "btn btn-nav"%> |
     <%= link_to "Logout", logout_path, class: "btn btn-nav" %>
   </span>
 <% else %>
-  <span class="hello"><%= link_to '<i class="fi-social-google-plus"></i> Sign In With Google+'.html_safe, "/auth/google", class: "button google" %></span>
+    <span class="hello"><%= link_to '<i class="fi-social-google-plus"></i> Sign In With Google+'.html_safe, "/auth/google", class: "button google" %></span>
 <% end %>
