@@ -22,7 +22,7 @@ module ApplicationHelper
 
   def colorize_pricediff(price, avg_cost)
     difference = price.to_i - avg_cost.to_i
-    if difference < 0
+    if difference > 0
       color = "green"
     else
       color = "red"

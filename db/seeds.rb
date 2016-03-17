@@ -226,12 +226,12 @@ end
 
 services = [
   {
-    name: "Bordatella (Oral)",
+    name: "Bordatella (Oral) Vaccination",
     service_type: "Vaccinations",
     avg_cost: 2500
   },
   {
-    name: "Rabies",
+    name: "Rabies Vaccination",
     service_type: "Vaccinations",
     avg_cost: 1250
   },

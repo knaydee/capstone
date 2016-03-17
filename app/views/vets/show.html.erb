@@ -21,10 +21,10 @@
   <% @service_vets.each do |service_vet| %>
   <ul class="service">
     <li>
-      <%= service_vet.service.name %> - <%= formatted_price(service_vet.price) %>
+      <%= service_vet.service.name %>: <%= formatted_price(service_vet.price) %>
       <li>
-        <%= colorize_pricediff(service_vet.price, service_vet.service.avg_cost) %><br>
-        Average Cost: <%= formatted_price(service_vet.service.avg_cost) %>
+        Average Cost: <%= formatted_price(service_vet.service.avg_cost) %><br>
+        Savings: <%= colorize_pricediff(service_vet.service.avg_cost, service_vet.price) %>
       </li>
     </li>
   </ul>
