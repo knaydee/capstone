@@ -10,7 +10,7 @@
 
       <%= form_tag(root_path, :method => "get", id: "search-form") do %>
       <div class="input-group small-2 large-4 columns">
-        <%= text_field_tag :search, params[:search], placeholder: "Search Vets by Name", class: "input-group-field" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Vets by City", class: "input-group-field" %>
         <div class="input-group-button button">
           <%= submit_tag "Search", class: "button" %>
         </div>
