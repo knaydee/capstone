@@ -5,8 +5,12 @@
     <% @pets.each do |pet| %>
         <div class="small-2 large-4 columns">
         <!-- <%= link_to "#{pet.name}", user_pet_path(@current_user.id, pet.id) %> -->
+        <h4><%= pet.name %></h4>
         <%= image_tag pet.pet_photo.url(:thumb) %><br>
-        <%= pet.name %>
+        <%= pet.age %> yo <%= pet.sex %> <%= pet.breed %><br>
+        <%= pet.weight %> lbs <br>
+        <%= link_to '<i class="fi-pencil"></i>'.html_safe, edit_user_pet_path(@current_user, pet), method: :get, class: "button info" %>
+        <%= link_to '<i class="fi-trash"></i>'.html_safe, user_pet_path(@current_user, pet), method: :delete, class: "button info", data: { confirm: "Last chance...you sure?" } %>
         </div>
     <% end %>
   </div>
