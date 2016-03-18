@@ -6,6 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+Vet.destroy_all
+UserVet.destroy_all
+Service.destroy_all
+ServiceVet.destroy_all
+Pet.destroy_all
+
 users = [
   {
     username: "Ada",
@@ -25,6 +32,14 @@ users = [
     uid: 456789,
     email: "finnigan@gmail.com"
   },
+  {
+    id: 4,
+    username: "Meighan Rasley",
+    provider: "google",
+    uid: 106194418758104588760,
+    email: "meighanr@gmail.com",
+    image: "https://lh6.googleusercontent.com/-D2k9bo4-eRM/AAAAAAAAAAI/AAAAAAAAA10/ajZItVH_Chc/photo.jpg"
+  }
 ]
 
 users.each do |u|
@@ -323,38 +338,23 @@ service_vets.each do |sv|
   service_vet.save(validate: false)
 end
 
-# user_vets = [
-#   {
-#     user_id: 4,
-#     vet_id: 1,
-#     favorite: true
-#   },
-#   {
-#     user_id: 2,
-#     vet_id: 1,
-#     favorite: false
-#   },
-#   {
-#     user_id: 3,
-#     vet_id: 1,
-#     favorite: true
-#   },
-#   {
-#     user_id: 2,
-#     vet_id: 2,
-#     favorite: true
-#   },
-#   {
-#     user_id: 1,
-#     vet_id: 3,
-#     favorite: false
-#   },
-# ]
-#
-# user_vets.each do |uv|
-#   user_vet = UserVet.new(uv)
-#   user_vet.save(validate: false)
-# end
+user_vets = [
+  {
+    user_id: 4,
+    vet_id: 1,
+    favorite: true
+  },
+  {
+    user_id: 4,
+    vet_id: 4,
+    favorite: false
+  },
+]
+
+user_vets.each do |uv|
+  user_vet = UserVet.new(uv)
+  user_vet.save(validate: false)
+end
 
 pets = [
   {
