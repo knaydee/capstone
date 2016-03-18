@@ -358,7 +358,11 @@ pets = [
     size: "small",
     species: "dog",
     sex: "female",
-    user_id: 4
+    user_id: 4,
+    pet_photo_file_name: "11008450_10202888095642578_3734868227865778712_n.jpg",
+    pet_photo_content_type: "image/jpeg",
+    pet_photo_file_size: 53460,
+    pet_photo_updated_at: "2016-03-16 01:40:45"
   },
   {
     name: "Finnigan",
@@ -368,7 +372,11 @@ pets = [
     size: "small",
     species: "dog",
     sex: "male",
-    user_id: 4
+    user_id: 4,
+    pet_photo_file_name: "67318_1302694106603_162980_n.jpg",
+    pet_photo_content_type: "image/jpeg",
+    pet_photo_file_size: 72054,
+    pet_photo_updated_at: "2016-03-17 21:07:14"
   },
   {
     name: "Noah",
@@ -378,7 +386,11 @@ pets = [
     size: "small",
     species: "cat",
     sex: "male",
-    user_id: 4
+    user_id: 4,
+    pet_photo_file_name: "1936530_1026141832969_6187943_n.jpg",
+    pet_photo_content_type: "image/jpeg",
+    pet_photo_file_size: 43738,
+    pet_photo_updated_at: "2016-03-17 21:03:59"
   },
   {
     name: "Anna",
@@ -388,7 +400,11 @@ pets = [
     size: "small",
     species: "cat",
     sex: "female",
-    user_id: 4
+    user_id: 4,
+    pet_photo_file_name: "1936530_1026143153002_6925955_n.jpg",
+    pet_photo_content_type: "image/jpeg",
+    pet_photo_file_size: 56927,
+    pet_photo_updated_at: "2016-03-17 21:06:56"
   },
 ]
 
