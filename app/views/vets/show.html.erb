@@ -14,7 +14,6 @@
   <% else %>
   <%= link_to '<i class="fi-trash"></i>'.html_safe, unfavorite_path(@vet), method: :delete, class: "button info" %>
   <% end %>
-</div>
 
 <div class="services">
   <h4>Available Services:</h4>
@@ -29,6 +28,7 @@
     </li>
   </ul>
   <% end %>
+</div>
   <% if @current_user %>
   <%= link_to '<i class="fi-plus"></i>'.html_safe, new_vet_service_path(@vet), method: :get, class: "button info" %>
   <% end %>
