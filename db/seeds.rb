@@ -34,6 +34,7 @@ end
 
 vets = [
   {
+    id: 1,
     name: "Animal Hospital of Lynnwood",
     url: "https://my.vetmatrixbase.com/holistic-pet-care.com/services/lynnwood-services.html",
     address: "19503 56th Ave W Lynnwood, WA 98036",
@@ -42,6 +43,7 @@ vets = [
     fax: "(425) 672-1107"
   },
   {
+    id: 2,
     name: "Animal Wellness and Rehab Center",
     url: "https://my.vetmatrixbase.com/holistic-pet-care.com/services/bellevue-services.html",
     address: "2115 112th Ave. NE #100",
@@ -50,6 +52,7 @@ vets = [
     fax: "(425) 455-9946"
   },
   {
+    id: 3,
     name: "Greenlake Animal Hospital",
     url: "http://www.greenlakevet.com/",
     address: "6857 Woodlawn Ave NE, Seattle, WA 98115",
@@ -58,6 +61,7 @@ vets = [
     fax: "(206) 525-7090"
   },
   {
+    id: 4,
     name: "Jet City Animal Clinic",
     url: "http://jetcityanimalclinic.com/",
     address: "822 12th Avenue Seattle, WA 98122",
@@ -226,16 +230,19 @@ end
 
 services = [
   {
+    id: 1,
     name: "Bordatella (Oral) Vaccination",
     service_type: "Vaccinations",
     avg_cost: 2500
   },
   {
+    id: 2,
     name: "Rabies Vaccination",
     service_type: "Vaccinations",
     avg_cost: 1250
   },
   {
+    id: 3,
     name: "Office Calls",
     service_type: "General Care",
     avg_cost: 5000

@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         flash[:notice] = "Incorrect email or password"
       end
     end
-    redirect_to favorite_path(4)
+    redirect_to favorite_path(3)
   end
 
   def destroy
