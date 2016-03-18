@@ -15,12 +15,12 @@ class SessionsController < ApplicationController
         flash[:notice] = "Incorrect email or password"
       end
     end
-    redirect_to root_path
+    redirect_to favorite_path(4)
   end
 
   def destroy
-    session[:user_id] = nil
     flash[:notice] = "Goodbye, #{@current_user.username}! Thanks for visiting!"
+    session[:user_id] = nil
     redirect_to root_path
   end
 end

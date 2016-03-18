@@ -5,7 +5,9 @@
         <!-- <%= f.label :name %> -->
         <%= f.text_field :name, class: "form-control", label: false, placeholder: "Name", :required => true %>
         <!-- <%= f.label :price %> -->
-        <%= text_field_tag :price, @price, class: "form-control", label: false, placeholder: "Price", :required => true %>
+        <%= text_field_tag :price_fake, @price, class: "form-control", label: false, placeholder: "Price", :required => true %>
+        <%= hidden_field_tag :price, "3500" %>
+        <%= f.hidden_field :avg_cost, value: "3000" %>
       </div>
   </fieldset>
   <div class="submit"><%= f.submit class: "button info" %></div>

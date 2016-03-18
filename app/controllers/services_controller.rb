@@ -23,12 +23,12 @@ class ServicesController < ApplicationController
   def create
     Service.transaction do
       vet_id = params[:vet_id]
-      price = params[:price]
+      price = params[:price].to_i
       @vet = Vet.find(vet_id)
-      @service = Service.create(service_params[:service])
-      @service_vet = ServiceVet.create({vet: @vet, service: @service, price: price})
+      @service = Service.create!(service_params[:service])
+      @service_vet = ServiceVet.create!({vet: @vet, service: @service, price: price})
     end
-      redirect_to root_path
+      redirect_to vet_path(@vet)
       flash[:notice] = 'Service was added'
   end
 

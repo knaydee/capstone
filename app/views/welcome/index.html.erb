@@ -1,7 +1,7 @@
 <header id="header">
   <div class="title-holder">
     <div class="title">
-      <%= link_to image_tag('PetStopLogo-hand.jpg'), url_for({:controller => 'welcome', :action => 'index'}) %>
+      <%= link_to image_tag('PetStopLogo-hand.jpg'), url_for({:controller => 'welcome', :action => 'index'}), class: "logo" %>
     </div>
   </div>
 </header>
@@ -16,17 +16,17 @@
         </div>
       </div>
       <% end %>
-      <div id="vet-info">
         <% if params[:search] %>
           <% if @vets.present? %>
             <%= render "vet" %>
           <% else %>
-            <p>There are no vets containing the term(s):
-              <%= params[:search] %></p>
+            <div class="vet-info">
+              <p>There are no vets containing the term(s):
+                <%= params[:search] %></p>
+            </div>
           <% end %>
         <% end %>
         <div class="welcome-buttons">
           <%= link_to '<i class="fi-list"></i> Vets'.html_safe, vets_path, method: :get, class: "button info" %>
         </div>
-      </div>
   </div>

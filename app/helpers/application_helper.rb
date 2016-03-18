@@ -27,6 +27,6 @@ module ApplicationHelper
     else
       color = "red"
     end
-    return "<font color=#{color}>#{formatted_price(price-avg_cost)}</font>".html_safe
+    return "<font color=#{color}>#{formatted_price(difference)}</font>".html_safe
   end
 end

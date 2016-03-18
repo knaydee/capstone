@@ -3,14 +3,15 @@
   <h2>
     My Vets
   </h2>
-  <% @current_user.vets.each do |vet| %>
+  <% @user_vets.each do |user_vet| %>
+  <% vet = user_vet.vet %>
   <ul>
     <li>
       <%= link_to "#{vet.name}", vet_path(vet.id)%>
       <% if vet.primary(@current_user) %>
-      <i class="fi-star"></i>
+      <i class="fi-star large"></i>
       <% else %>
-      <%= link_to '<i class="fi-star", id="white-star"></i>'.html_safe, primary_path(vet), method: :patch %>
+      <%= link_to '<i class="fi-star large", id="white-star"></i>'.html_safe, primary_path(vet), method: :patch %>
       <% end %>
     </li>
   </ul>
