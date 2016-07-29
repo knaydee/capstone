@@ -10,7 +10,7 @@ class Vet < ActiveRecord::Base
   validates :name, uniqueness: true
 
   def self.search(search)
-    where("lower(address) LIKE lower(?)", "%#{search}%")
+    where("lower(name) LIKE lower(?)", "%#{search}%")
   end
 
   def primary(current_user)
